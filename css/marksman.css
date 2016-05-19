@@ -5715,10 +5715,10 @@ html, body {
     width: 100%; }
   #titleContainer div {
     width: 70%;
-    height: 2px;
+    height: 1px;
     margin: 20px auto;
     background-color: #FFED85; }
-  #titleContainer h3 {
+  #titleContainer h2 {
     font-family: "Lato-Hai";
     color: #FFF;
     margin: 0px; }
