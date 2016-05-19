@@ -1,2 +1,135 @@
 @import "../bootstrap-sass/assets/stylesheets/bootstrap";
 @import "../bootstrap-sass/bootstrap-block-grid";
+
+$titleFont: 'Waterlily Script';
+$subFont1: 'Lato-Reg';
+$subFont1Alt: 'Lato-Lig';
+$subFont1Alt2: 'Lato-Hai';
+
+// colors
+$primary-color: #061F35;
+$accent-color: #FFED85;
+$tertiary-color: #FFF;
+
+$overlay-color: rgba(6,31,53,0.5);
+
+@font-face {
+    font-family: 'Waterlily Script';
+    src: 
+        local('Waterlily Script'),
+        url('../fonts/WaterlilyScript.ttf');
+}
+
+@font-face {
+    font-family: 'Lato-Reg';
+    src: 
+        local('Lato-Reg'),
+        url('../fonts/Lato-Reg.ttf');
+}
+
+@font-face {
+    font-family: 'Lato-Lig';
+    src: 
+        local('Lato-Lig'),
+        url('../fonts/Lato-Lig.ttf');
+}
+
+@font-face {
+    font-family: 'Lato-Hai';
+    src: 
+        local('Lato-Hai'),
+        url('../fonts/Lato-Hai.ttf');
+}
+
+
+
+/****************************
+    Utility Classes/Rules
+*****************************/
+
+.vert-center {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hori-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.full-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+.container-fluid {
+    //    getting rid of bootstrap padding on container 
+    //    so that class is full-width of screen
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+/****************************
+    Default Css
+*****************************/
+
+.section {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    background-color: $overlay-color;
+    
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+#section1background {
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/marksman-1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left top;
+}
+
+#titleContainer {
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    text-align: center;
+    
+    img {
+        width: 100%;
+    }
+    
+    div {
+        width: 70%;
+        height: 2px;
+        margin: 20px auto;
+        background-color: $accent-color;
+    }
+    
+    h3 {
+        font-family: $subFont1Alt2;
+        color: $tertiary-color;
+        margin: 0px;
+    }
+}
