@@ -5672,7 +5672,7 @@ button.close {
   left: 50%;
   transform: translate(-50%, -50%); }
 
-html, body {
+html, body, form {
   width: 100%;
   height: 100%; }
 
@@ -5688,13 +5688,29 @@ html, body {
   height: 100vh;
   position: relative; }
 
-.overlay {
+.overlay-blue {
   width: 100%;
   height: 100%;
-  background-color: rgba(6, 31, 53, 0.5);
+  background-color: rgba(6, 31, 53, 0.4);
   position: absolute;
   top: 0px;
   left: 0px; }
+
+.overlay-white {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(250, 250, 250, 0.6);
+  position: absolute;
+  top: 0px;
+  left: 0px; }
+
+.contentContainer {
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center; }
 
 #section1background {
   width: 100%;
@@ -5704,23 +5720,40 @@ html, body {
   background-size: cover;
   background-position: left top; }
 
-#titleContainer {
-  width: 80%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center; }
-  #titleContainer img {
-    width: 100%; }
-  #titleContainer div {
-    width: 70%;
-    height: 1px;
-    margin: 20px auto;
-    background-color: #FFED85; }
-  #titleContainer h2 {
-    font-family: "Lato-Hai";
-    color: #FFF;
-    margin: 0px; }
+#titleContainer img {
+  width: 100%; }
+#titleContainer div {
+  width: 70%;
+  height: 1px;
+  margin: 20px auto;
+  background-color: #FFED85; }
+#titleContainer h2 {
+  font-family: "Lato-Hai";
+  color: #FFF;
+  margin: 0px; }
+
+#section2background {
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/weirdo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right center; }
+
+#section2Content {
+  text-align: left; }
+  #section2Content h1 {
+    width: 40%;
+    margin: 0px auto;
+    text-align: center;
+    font-family: "Waterlily Script";
+    color: #061F35; }
+  #section2Content p {
+    font-family: "Lato-Lig";
+    color: #061F35;
+    margin: 20px 0px; }
+
+.button-icon {
+  display: none; }
 
 /*# sourceMappingURL=marksman.css.map */
