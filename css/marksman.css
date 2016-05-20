@@ -5711,6 +5711,11 @@ html, body, form {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center; }
+  .contentContainer h1 {
+    width: 80%;
+    margin: 0px auto;
+    font-family: "Waterlily Script";
+    color: #061F35; }
 
 #section1background {
   width: 100%;
@@ -5740,18 +5745,11 @@ html, body, form {
   background-size: cover;
   background-position: right center; }
 
-#section2Content {
+#section2Content p {
+  font-family: "Lato-Lig";
+  color: #061F35;
+  margin: 20px 0px;
   text-align: left; }
-  #section2Content h1 {
-    width: 40%;
-    margin: 0px auto;
-    text-align: center;
-    font-family: "Waterlily Script";
-    color: #061F35; }
-  #section2Content p {
-    font-family: "Lato-Lig";
-    color: #061F35;
-    margin: 20px 0px; }
 
 .button-link {
   display: block;
@@ -5774,5 +5772,13 @@ html, body, form {
     color: #FFF; }
   .page-button img {
     display: none; }
+
+#section3background {
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/teddy.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left bottom; }
 
 /*# sourceMappingURL=marksman.css.map */
