@@ -5753,7 +5753,26 @@ html, body, form {
     color: #061F35;
     margin: 20px 0px; }
 
-.button-icon {
-  display: none; }
+.button-link {
+  display: block;
+  text-decoration: none; }
+
+.page-button {
+  width: 200px;
+  display: block;
+  padding: 3px 30px;
+  margin: 20px auto;
+  text-align: center;
+  background-color: transparent;
+  border: 2px solid #061F35;
+  border-radius: 5px;
+  font-family: "Lato-Lig";
+  color: #061F35;
+  transition: background-color 0.5s linear; }
+  .page-button:hover {
+    background-color: #061F35;
+    color: #FFF; }
+  .page-button img {
+    display: none; }
 
 /*# sourceMappingURL=marksman.css.map */

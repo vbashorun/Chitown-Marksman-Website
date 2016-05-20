@@ -177,6 +177,33 @@ html, body, form {
     }
 }
 
-.button-icon {
-    display: none;
+.button-link {
+    display: block;
+    text-decoration: none;
+}
+
+.page-button {
+    width: 200px;
+    display: block;
+    padding: 3px 30px;
+    margin: 20px auto;
+    text-align: center;
+    
+    background-color: rgba(0,0,0,0);
+    border: 2px solid $primary-color;
+    border-radius: 5px;
+    font-family: $subFont1Alt;
+    color: $primary-color;
+    
+    transition: background-color 0.5s linear;
+    
+    &:hover {
+        background-color: $primary-color;
+        color: $tertiary-color;
+        
+    }
+    
+    img {
+        display: none
+    }
 }
