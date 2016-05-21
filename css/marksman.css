@@ -5712,7 +5712,7 @@ html, body, form {
   background-color: rgba(250, 250, 250, 0.7);
   position: absolute;
   top: 0px;
-  left: 0px; }
+  right: 0px; }
 
 .contentContainer {
   width: 80%;
@@ -5761,10 +5761,13 @@ html, body, form {
 #section2background {
   width: 100%;
   height: 100%;
+  position: relative;
   background-image: url("../images/weirdo.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: right center; }
+  #section2background div {
+    display: none; }
 
 #section2Content p {
   font-family: "Lato-Lig";
@@ -5841,7 +5844,26 @@ html, body, form {
     border: #061F35 solid 1px; }
 
 /****************************
-    Desktop Styling
+    Tablet/Desktop Styling
 *****************************/
+@media (min-width: 768px) {
+  #section2background {
+    width: 40%;
+    float: left;
+    background-position: center; }
+    #section2background div {
+      display: block;
+      width: 47%;
+      height: 100%;
+      position: absolute;
+      top: 0%;
+      right: 0%;
+      background: -webkit-linear-gradient(right, #fafafa, transparent); }
+
+  #section2 [class=overlay-white] {
+    width: 60%; }
+
+  #section2Content {
+    float: right; } }
 
 /*# sourceMappingURL=marksman.css.map */
