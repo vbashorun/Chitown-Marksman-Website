@@ -5681,11 +5681,21 @@ html, body, form {
   padding-right: 0px; }
 
 /****************************
+    Animations
+*****************************/
+@keyframes subtleLevitation {
+  50% {
+    bottom: 6%; }
+  100% {
+    bottom: 5%; } }
+/****************************
     Default Css
 *****************************/
 .section {
   width: 100vw;
   height: 100vh;
+  min-height: 100vh;
+  min-width: 100vw;
   position: relative; }
 
 .overlay-blue {
@@ -5713,7 +5723,7 @@ html, body, form {
   text-align: center; }
   .contentContainer h1 {
     width: 80%;
-    margin: 0px auto;
+    margin: 45px auto;
     font-family: "Waterlily Script";
     color: #061F35; }
 
@@ -5725,17 +5735,28 @@ html, body, form {
   background-size: cover;
   background-position: left top; }
 
-#titleContainer img {
-  width: 100%; }
-#titleContainer div {
-  width: 70%;
-  height: 1px;
-  margin: 20px auto;
-  background-color: #FFED85; }
-#titleContainer h2 {
-  font-family: "Lato-Hai";
-  color: #FFF;
-  margin: 0px; }
+#titleContainer {
+  top: 45%; }
+  #titleContainer img {
+    width: 100%; }
+  #titleContainer div {
+    width: 70%;
+    height: 1px;
+    margin: 20px auto;
+    background-color: #FFED85; }
+  #titleContainer h2 {
+    font-family: "Lato-Hai";
+    color: #FFF;
+    margin: 0px; }
+
+#chevron {
+  width: 50px;
+  display: block;
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: subtleLevitation 1.5s linear infinite; }
 
 #section2background {
   width: 100%;
@@ -5780,5 +5801,47 @@ html, body, form {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: left bottom; }
+
+.textInput {
+  width: 100%;
+  height: 40px;
+  margin: 20px 0px;
+  padding: 10px 15px;
+  opacity: 0.8;
+  position: relative;
+  display: block;
+  background-color: #061F35;
+  color: #FFED85;
+  border: none;
+  border-radius: 5px;
+  font-family: "Lato-Hai"; }
+  .textInput::-webkit-input-placeholder {
+    color: #FFED85; }
+
+.textArea {
+  height: 200px; }
+
+#sendMailButton {
+  width: 150px;
+  height: 40px;
+  margin: 0px 0px;
+  padding: 10px 15px;
+  opacity: 0.8;
+  display: block;
+  background-color: #061F35;
+  color: #FFED85;
+  border: none;
+  border-radius: 5px;
+  font-family: "Lato-Hai";
+  float: right;
+  transition: background-color 0.2s linear, color 0.2s linear; }
+  #sendMailButton:hover {
+    background-color: #FFF;
+    color: #061F35;
+    border: #061F35 solid 1px; }
+
+/****************************
+    Desktop Styling
+*****************************/
 
 /*# sourceMappingURL=marksman.css.map */
