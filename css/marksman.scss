@@ -194,6 +194,14 @@ html, body, form {
     }
 }
 
+#section2Wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
 #section2Content {
     
     p {
@@ -214,6 +222,7 @@ html, body, form {
     display: block;
     padding: 3px 30px;
     margin: 20px auto;
+    position: relative;
     text-align: center;
     
     background-color: rgba(0,0,0,0);
@@ -322,18 +331,29 @@ html, body, form {
     }
     
     #section2 {
-        
         [class=overlay-white] {
-            width: 60%;
-            //display: none;
-            //background: -webkit-linear-gradient(right, rgba(250,250,250, 1), rgba(0,0,0,0.0));
-            //background: -webkit-linear-gradient(right, rgb(255, 26, 255), rgba(0,0,0,0.0));
+            display: none;
         }
     }
     
-    #section2Content {
-        float: right;
+    #section2Wrapper {
+        width: 60%;
     }
+    
+    .page-button {
+        
+        height: 50px;
+        padding: 12px 30px;
+    
+    img {
+        display: block;
+        width: 20%;
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        transform: translateY(-50%);
+    }
+}
     
     
 }
