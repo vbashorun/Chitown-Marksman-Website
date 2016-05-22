@@ -34,7 +34,8 @@ function validateEmail() {
 
 function sendEmail(visitorEmail, emailSubject, emailMessage)
 {
-    alert("sendemail called");
+    console.log("sendmail called");
+    
     var xmlhttp;
     
     if (window.XMLHttpRequest)
@@ -50,6 +51,9 @@ function sendEmail(visitorEmail, emailSubject, emailMessage)
 
     xmlhttp.onreadystatechange=function()
     {
+        //console.log("readstatechange event is being set");
+        
+        
         if (xmlhttp.readyState==4 && xmlhttp.status==200)
         {
             // code to execute when response is received
@@ -60,6 +64,6 @@ function sendEmail(visitorEmail, emailSubject, emailMessage)
     }
 
     //set up request and use unique id to avoid cached result
-    xmlhttp.open("POST","../scripts/sendMail.php?visitorEmail=" + visitorEmail + "&emailSubject=" + emailSubject + "&emailMessage=" + emailMessage,true);
+    xmlhttp.open("POST","../scripts/sendMail.php?visitorEmail=" + visitorEmail.value + "&emailSubject=" + emailSubject.value + "&emailMessage=" + emailMessage.value,true);
     xmlhttp.send();
 }
