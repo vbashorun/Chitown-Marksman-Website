@@ -5875,14 +5875,18 @@ html, body, form {
     width: 60%; }
 
   .page-button {
-    height: 50px;
-    padding: 12px 30px; }
+    height: 60px;
+    padding: 17px 30px;
+    border-radius: 3px; }
     .page-button img {
       display: block;
       width: 20%;
       position: absolute;
       top: 50%;
       left: 10px;
-      transform: translateY(-50%); } }
+      transform: translateY(-50%); }
+
+  #section3Content {
+    width: 60%; } }
 
 /*# sourceMappingURL=marksman.css.map */

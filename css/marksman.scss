@@ -253,8 +253,7 @@ html, body, form {
     background-position: left bottom;
 }
 
-#section3Content {
-}
+
 
 .textInput {
     width: 100%;
@@ -342,18 +341,21 @@ html, body, form {
     
     .page-button {
         
-        height: 50px;
-        padding: 12px 30px;
+        height: 60px;
+        padding: 17px 30px;
+        border-radius: 3px;
     
-    img {
-        display: block;
-        width: 20%;
-        position: absolute;
-        top: 50%;
-        left: 10px;
-        transform: translateY(-50%);
+        img {
+            display: block;
+            width: 20%;
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+        }
     }
-}
     
-    
+    #section3Content {
+        width: 60%;
+    }
 }
