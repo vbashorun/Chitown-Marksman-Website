@@ -16,6 +16,15 @@ $(document).ready(function() {
         return false;
       });
     
+    $('#instagramButton').hover(function() 
+    {
+        $("#instagramButton img").css({"content" : 'url("images/icon_instagram_yellow.png")'});
+
+    }).mouseout(function() 
+    { 
+        $("#instagramButton img").css({"content" : 'url("images/icon_instagram_blue.png")'});
+    });
+    
     $('#contactMeButton').click(function()
       {
         var targetOffset = $("#section3").offset().top;
