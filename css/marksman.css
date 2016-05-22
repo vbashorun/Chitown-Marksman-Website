@@ -5896,6 +5896,9 @@ html, body, form {
     Tablet/Desktop Styling
 *****************************/
 @media (min-width: 768px) {
+  #loadBackdrop h3 {
+    transform: translate(-50%, 650%); }
+
   #section2background {
     width: 40%;
     float: left;

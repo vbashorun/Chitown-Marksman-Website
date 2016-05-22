@@ -16,12 +16,19 @@ $(document).ready(function() {
         return false;
       });
     
-    $('#contactMeButton').click(function() 
-     {
+    $('#contactMeButton').click(function()
+      {
         var targetOffset = $("#section3").offset().top;
         $('html, body').animate({scrollTop: targetOffset}, 1000);
         return false;
-      });
+      }).hover(function() 
+        {
+            $("#contactMeButton img").css({"content" : 'url("images/icon_mail_yellow.png")'});
+
+        }).mouseout(function() 
+        { 
+            $("#contactMeButton img").css({"content" : 'url("images/icon_mail_blue.png")'});
+        });
     
 });
 

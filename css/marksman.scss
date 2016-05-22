@@ -355,6 +355,11 @@ html, body, form {
 *****************************/
 
 @media (min-width: $screen-sm-min) {
+    #loadBackdrop {
+        h3 {
+            transform: translate(-50%, 650%);
+        }
+    }
     #section2background {
         width: 40%;
         float: left;
@@ -384,7 +389,6 @@ html, body, form {
     }
     
     .page-button {
-        
         height: 60px;
         padding: 17px 30px;
         border-radius: 3px;
