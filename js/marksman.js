@@ -8,6 +8,21 @@ $(document).ready(function() {
         }, 1000);
        
     });
+    
+    $('#chevron').click(function() 
+     {
+        var targetOffset = $("#section2").offset().top;
+        $('html, body').animate({scrollTop: targetOffset}, 1000);
+        return false;
+      });
+    
+    $('#contactMeButton').click(function() 
+     {
+        var targetOffset = $("#section3").offset().top;
+        $('html, body').animate({scrollTop: targetOffset}, 1000);
+        return false;
+      });
+    
 });
 
 function validateEmail() {
