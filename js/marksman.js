@@ -16,7 +16,7 @@ $(document).ready(function() {
         return false;
       });
     
-    $('#instagramButton').hover(function() 
+    $('#instagramButton, #instagramButton img').hover(function() 
     {
         $("#instagramButton img").css({"content" : 'url("images/icon_instagram_yellow.png")'});
 
@@ -25,7 +25,7 @@ $(document).ready(function() {
         $("#instagramButton img").css({"content" : 'url("images/icon_instagram_blue.png")'});
     });
     
-    $('#contactMeButton').click(function()
+    $('#contactMeButton, #contactMeButton img').click(function()
       {
         var targetOffset = $("#section3").offset().top;
         $('html, body').animate({scrollTop: targetOffset}, 1000);
