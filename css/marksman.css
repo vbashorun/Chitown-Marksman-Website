@@ -5866,7 +5866,7 @@ html, body, form {
       position: absolute;
       top: 0%;
       right: 0%;
-      background: -webkit-linear-gradient(right, #fafafa, transparent); }
+      background: -webkit-linear-gradient(right, #fafafa, rgba(250, 250, 250, 0)); }
 
   #section2 [class=overlay-white] {
     display: none; }
