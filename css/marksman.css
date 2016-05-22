@@ -5715,16 +5715,22 @@ html, body, form {
   height: 100vh;
   width: 100vw;
   transition: opacity 1s linear, height 1s linear; }
-
-#wheel {
-  width: 20%;
-  position: absolute;
-  z-index: 2;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  /*animation: wheelSpin 2s linear infinite, wheelBounce 4s linear infinite, colorShift 4s linear infinite;*/
-  animation: wheelSpin 5s linear infinite, wheelBounce 2s linear infinite; }
+  #loadBackdrop img {
+    width: 20%;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: wheelSpin 5s linear infinite, wheelBounce 2s linear infinite; }
+  #loadBackdrop h3 {
+    margin: 0px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 300%);
+    font-family: "Lato-Lig";
+    color: #FFED85; }
 
 .section {
   width: 100vw;

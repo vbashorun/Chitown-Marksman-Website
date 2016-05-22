@@ -49,7 +49,7 @@ function validateEmail() {
 
 function sendEmail(visitorEmail, emailSubject, emailMessage)
 {
-    console.log("sendmail called");
+    //console.log("sendmail called");
     
     var xmlhttp;
     
@@ -73,7 +73,7 @@ function sendEmail(visitorEmail, emailSubject, emailMessage)
         {
             // code to execute when response is received
             // document.getElementById("content").innerHTML=xmlhttp.responseText;
-            alert("message sent");
+            //alert("message sent");
             
         }
     }
