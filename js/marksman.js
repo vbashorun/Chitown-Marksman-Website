@@ -53,10 +53,21 @@ function validateEmail() {
         missingSubject = (emailSubject.value == ""), 
         missingMessage = (emailMessage.value == "");
     
-    if (missingEmail || missingSubject || missingMessage)
+    if (missingEmail)
     {
-        alert("your message is missing information");
+        alert("Sort of need to know who I'd be responding to. Your email, please?");
         return false;
+    }
+    else if (missingSubject)
+    {
+        alert("Afraid I need an email subject, bud.");
+        return false;
+    }
+    else if (missingMessage)
+    {
+        alert("Um....kinda need a message....");
+        return false;
+
     }
     else
         sendEmail(visitorEmail, emailSubject, emailMessage);
@@ -65,8 +76,6 @@ function validateEmail() {
 
 function sendEmail(visitorEmail, emailSubject, emailMessage)
 {
-    //console.log("sendmail called");
-    
     var xmlhttp;
     
     if (window.XMLHttpRequest)
@@ -82,19 +91,22 @@ function sendEmail(visitorEmail, emailSubject, emailMessage)
 
     xmlhttp.onreadystatechange=function()
     {
-        //console.log("readstatechange event is being set");
-        
         
         if (xmlhttp.readyState==4 && xmlhttp.status==200)
         {
             // code to execute when response is received
-            // document.getElementById("content").innerHTML=xmlhttp.responseText;
-            //alert("message sent");
+            var response = xmlhttp.responseText;
             
+            if (response == "Message Sent") {
+                $("#section3Content [type*=text], #sendMailButton").css({"display" : "none"});
+                $("#emailConfirmation").css({"display" : "block"});
+            }
         }
     }
 
     //set up request and use unique id to avoid cached result
-    xmlhttp.open("POST","../scripts/sendMail.php?visitorEmail=" + visitorEmail.value + "&emailSubject=" + emailSubject.value + "&emailMessage=" + emailMessage.value,true);
-    xmlhttp.send();
+    xmlhttp.open("POST","scripts/sendChitown.php",true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+    var mailParams = "visitorEmail=" + visitorEmail.value + "&emailSubject=" + emailSubject.value + "&emailMessage=" + emailMessage.value
+    xmlhttp.send(mailParams);
 }

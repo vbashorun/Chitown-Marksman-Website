@@ -5854,7 +5854,7 @@ html, body, form {
   background-size: cover;
   background-position: left bottom; }
 
-.textInput {
+.textInput, #emailConfirmation {
   width: 100%;
   height: 40px;
   margin: 20px 0px;
@@ -5867,7 +5867,7 @@ html, body, form {
   border: none;
   border-radius: 5px;
   font-family: "Lato-Hai"; }
-  .textInput::-webkit-input-placeholder {
+  .textInput::-webkit-input-placeholder, #emailConfirmation::-webkit-input-placeholder {
     color: #FFED85; }
 
 .textArea {
@@ -5891,6 +5891,11 @@ html, body, form {
     background-color: #FFF;
     color: #061F35;
     border: #061F35 solid 1px; }
+
+#emailConfirmation {
+  width: 60%;
+  margin: 0px auto;
+  display: none; }
 
 /****************************
     Tablet/Desktop Styling

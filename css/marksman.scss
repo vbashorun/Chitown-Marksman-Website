@@ -349,6 +349,13 @@ html, body, form {
     }
 }
 
+#emailConfirmation {
+    @extend .textInput;
+    width: 60%;
+    margin: 0px auto;
+    display: none;
+}
+
 
 /****************************
     Tablet/Desktop Styling
