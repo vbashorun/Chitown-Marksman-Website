@@ -105,7 +105,7 @@ function sendEmail(visitorEmail, emailSubject, emailMessage)
     }
 
     //set up request and use unique id to avoid cached result
-    xmlhttp.open("POST","scripts/sendChitown.php",true);
+    xmlhttp.open("POST","scripts/sendMailChitown.php",true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
     var mailParams = "visitorEmail=" + visitorEmail.value + "&emailSubject=" + emailSubject.value + "&emailMessage=" + emailMessage.value
     xmlhttp.send(mailParams);
