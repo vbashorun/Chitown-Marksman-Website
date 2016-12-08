@@ -1,0 +1,45 @@
+<form>
+    <div class="container-fluid">
+        <div id="section1" class="section">
+            <div id="section1background"></div>
+            <div class="overlay-blue"></div>
+            <div id="titleContainer" class="contentContainer">
+                <img src="images/Logo.png" />
+                <div></div>
+                <h2>Photographer</h2>
+            </div>
+            <a href="#section2"><img id="chevron" src="images/chevron.png" /></a>
+        </div>
+        <div id="section2" class="section">
+            <div id="section2background"><div><!-- Provides edge gradient on wider screen widths --></div></div>
+            <div class="overlay-white"></div>
+            <div id="section2Wrapper">
+                <div id="section2Content" class="contentContainer">
+                <h1>Welcome!</h1>
+                <p>Thanks for visiting! Unfortunately, this site is still under construction.
+                    Until it’s complete, you can reference my Instagram account for some
+                    examples of my work. Otherwise, feel free to email me for inquiries.</p>
+
+                <a href="https://instagram.com/chitownmarksman" target="_blank" class="button-link"><div id="instagramButton" class="page-button"><img src="images/icon_instagram_blue.png" /> Instagram</div></a>
+                <a href="#section3" class="button-link"><div id="contactMeButton" class="page-button"><img src="images/icon_mail_blue.png" /> Contact Me</div></a>
+            </div>
+            </div>
+        </div>
+        <div id="section3" class="section">
+            <div id="section3background"></div>
+            <div class="overlay-white"></div>
+            <div id="section3Content" class="contentContainer">
+                <h1>Contact Me</h1>
+                <input type="text" id="visitorEmail" class="textInput" placeholder="Your Email:" />
+                <input type="text" id="emailSubject" class="textInput" placeholder="Subject:" />
+                <textarea type="text" id="emailMessage" class="textInput textArea" placeholder="Message:" maxlength="300" ></textarea>
+                <div id="sendMailButton" onclick="validateEmail()">Submit</div>
+
+                <div id="emailConfirmation">
+                    Message sent! I'll get back to you as soon as I can!
+                </div>
+            </div>
+        </div>
+
+    </div>
+</form>
