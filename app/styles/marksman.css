@@ -5331,9 +5331,65 @@ html, body {
   100% {
     top: 50%; } }
 
+/**************************
+        Mobile Menu
+***************************/
+#mobileMenu {
+  height: 100vh;
+  width: 100vw;
+  padding: 5%;
+  background-color: #FFF;
+  position: relative;
+  z-index: 5; }
+  #mobileMenu div:first-child {
+    width: 10%; }
+    #mobileMenu div:first-child img {
+      width: 100%; }
+  #mobileMenu div:nth-child(2) {
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
+    #mobileMenu div:nth-child(2) a {
+      text-decoration: none; }
+    #mobileMenu div:nth-child(2) p {
+      font-family: "Waterlily Script";
+      font-size: 2rem;
+      color: #061F35;
+      margin: 10% 0px; }
+      #mobileMenu div:nth-child(2) p:hover {
+        color: #979797; }
+
 /**************************************************************************
-                             Default Css
+                             Default Css - Focused on Mobile
 ***************************************************************************/
+header {
+  height: 10vh;
+  position: relative;
+  overflow: auto; }
+  header div:first-child {
+    width: 30%;
+    padding: 2%;
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%); }
+    header div:first-child img {
+      width: 100%; }
+  header ul {
+    display: none; }
+
+#mobileMenuButton {
+  width: 10%;
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  transform: translateY(-50%); }
+  #mobileMenuButton img {
+    width: 100%; }
+
 /**************************
         Home View
 ***************************/
@@ -5436,7 +5492,36 @@ html, body {
 /****************************
     Tablet/Desktop Styling
 *****************************/
+/**************************************************************************
+                            Tablet & wider
+***************************************************************************/
 @media (min-width: 768px) {
+  header {
+    height: 15vh; }
+    header div:first-child {
+      width: 25%; }
+    header ul {
+      width: 50%;
+      display: block;
+      position: absolute;
+      right: 0%;
+      bottom: 10%;
+      padding: 0px;
+      margin: 0px; }
+      header ul li {
+        list-style: none;
+        font-family: "Waterlily Script";
+        font-size: 2.5rem;
+        color: #061F35;
+        width: 33.33333%;
+        letter-spacing: 2px;
+        float: left;
+        margin: 0px;
+        text-align: center; }
+        header ul li:hover {
+          color: #FFED85; }
+  #mobileMenuButton {
+    display: none; }
   #homeBackground {
     background-position: right center; }
   #titleContainer img {
@@ -5446,8 +5531,24 @@ html, body {
   #homeNavigation li {
     font-size: 2rem; } }
 
+/**************************************************************************
+                            Laptop & wider
+***************************************************************************/
 @media (min-width: 992px) {
+  header {
+    height: 15vh; }
+    header div:first-child {
+      width: 25%; }
+    header ul li {
+      font-size: 3.5rem; }
   #titleContainer p {
     font-size: 50px; }
   #homeNavigation li {
     font-size: 3rem; } }
+
+/**************************************************************************
+                            Laptop HD & wider
+***************************************************************************/
+@media (min-width: 1200px) {
+  header ul li {
+    font-size: 4.5rem; } }

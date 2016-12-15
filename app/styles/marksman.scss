@@ -12,6 +12,8 @@ $tertiary-color: #FFF;
 $overlay-primary: rgba(6,31,53,0.1);
 $overlay-alt: rgba(250,250,250,0.7);
 
+$default-gray: #979797;
+
 @font-face {
     font-family: 'Waterlily Script';
     src: 
@@ -116,9 +118,94 @@ html, body {
     100% { top: 50%; }
 }
 
+/**************************
+        Mobile Menu
+***************************/
+
+#mobileMenu {
+    height: 100vh;
+    width: 100vw;
+    padding: 5%;
+    background-color: $tertiary-color;
+    
+    position: relative;
+    z-index: 5;
+    
+    div:first-child {
+        width: 10%;
+        
+        img {
+            width: 100%;
+        }
+    }
+    
+    div:nth-child(2) {
+        width: 70%;
+        
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        
+        a {
+            text-decoration: none;
+        }
+        
+        p {
+            font-family: $titleFont;
+            font-size: 2rem;
+            color: $primary-color;
+            margin: 10% 0px;
+            
+            &:hover {
+                color: $default-gray;
+            }
+            
+        }
+    }
+    
+}
+
 /**************************************************************************
-                             Default Css
+                             Default Css - Focused on Mobile
 ***************************************************************************/
+
+header {
+    height: 10vh;
+    position: relative;
+    overflow: auto;
+    
+    div:first-child {
+        width: 30%;
+        padding: 2%;
+        position: absolute;
+        top: 50%;
+        left: 5%;
+        transform: translateY(-50%);
+        img {
+            width: 100%;
+        }
+    }
+    
+    ul {
+        display: none;
+    }
+}
+
+#mobileMenuButton {
+    width: 10%;
+
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+
+    img {
+        width: 100%;
+    }
+}
+
 
 
 /**************************
@@ -247,8 +334,54 @@ html, body {
     Tablet/Desktop Styling
 *****************************/
 
-// tablet & wider
+/**************************************************************************
+                            Tablet & wider
+***************************************************************************/
+
 @media (min-width: $screen-sm-min) {
+    
+    header {
+        
+        height: 15vh;
+        
+        div:first-child {
+            width: 25%;
+        }
+        
+        ul {
+            width: 50%;
+            display: block;
+            position: absolute;
+            right: 0%;
+            bottom: 10%;
+            
+            padding: 0px;
+            margin: 0px;
+            
+            li {
+                list-style: none;
+                font-family: $titleFont;
+                font-size: 2.5rem;
+                color: $primary-color;
+                width: 100/3 * 1%;
+                letter-spacing: 2px;
+                
+                float: left;
+                margin: 0px;
+                text-align: center;
+                
+                &:hover {
+                    color: $accent-color;
+                }
+            }
+        }
+    }
+    
+    #mobileMenuButton {
+        display: none;
+    }
+    
+    
     #homeBackground {
         background-position: right center;
     }
@@ -272,8 +405,29 @@ html, body {
     }
 }
 
-// desktop & wider
+/**************************************************************************
+                            Laptop & wider
+***************************************************************************/
+
 @media (min-width: $screen-md-min) {
+    
+    header {
+        
+        height: 15vh;
+        
+        div:first-child {
+            width: 25%;
+        }
+        
+        ul {
+            
+            li {
+                font-size: 3.5rem;
+            }
+        }
+    }
+    
+    
     #titleContainer {
 
         p {
@@ -285,6 +439,24 @@ html, body {
     
         li {
             font-size: 3rem;
+        }
+    }
+}
+
+/**************************************************************************
+                            Laptop HD & wider
+***************************************************************************/
+
+
+@media (min-width: $screen-lg-min) {
+    
+    header {
+        
+        ul {
+            
+            li {
+                font-size: 4.5rem;
+            }
         }
     }
 }

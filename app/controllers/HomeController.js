@@ -2,7 +2,7 @@ app.controller('HomeController', ['$scope', function($scope) {
     
     $(document).ready(function() {
         
-        startSlideshow();
+        //startSlideshow();
 
     });
     
