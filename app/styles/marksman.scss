@@ -12,7 +12,14 @@ $tertiary-color: #FFF;
 $overlay-primary: rgba(6,31,53,0.1);
 $overlay-alt: rgba(250,250,250,0.7);
 
+$black: #000;
+
 $default-gray: #979797;
+
+$max-z-level: 5;
+$z-level-2: 3;
+
+$gallerycard-color: rgba(6, 31, 53, 0.8);
 
 @font-face {
     font-family: 'Waterlily Script';
@@ -129,7 +136,7 @@ html, body {
     background-color: $tertiary-color;
     
     position: relative;
-    z-index: 5;
+    z-index: $z-level-2;
     
     div:first-child {
         width: 10%;
@@ -172,6 +179,7 @@ html, body {
 ***************************************************************************/
 
 header {
+    width: 100vw;
     height: 10vh;
     position: relative;
     overflow: auto;
@@ -279,6 +287,118 @@ header {
         &:hover {
             color: $accent-color;
         }
+    }
+}
+
+/**************************
+        Portfolio View
+***************************/
+
+#portfolioSectionHeader {
+    width: 100vw;
+    height: 8vh;
+    position: relative;
+    
+    h2 {
+        font-family: $subFont1;
+        color: $black;
+        
+        width: 20%;
+        margin: 0px;
+        padding: 0px;
+        position: absolute;
+        bottom: 0%;
+        left: 3%;
+        
+    }
+    
+    ul {
+        width: 50%;
+        margin: 0px;
+        padding: 0px;
+        position: absolute;
+        right: 0%;
+        bottom: 0%;
+        overflow: auto;
+        
+        li {
+            width: 100/4 * 1%;
+            list-style: none;
+            float: left;
+        }
+    }
+    
+}
+
+#galleryContainer {
+    
+    width: 100vw;
+    height: 92vh;
+    position: relative;
+    padding: 2%;
+    overflow: auto;
+}
+
+#galleryBackground {
+    width: 70%;
+    height: 75%;
+    position: fixed;
+    bottom: 0%;
+    left: 0%;
+    background-image: url('../images/marksman-portfolio-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    
+    opacity: 0.7;
+    
+    /*background: -webkit-linear-gradient(right, rgba(250,250,250, 1), rgba(250,250,250, 0.0));
+    background: -webkit-linear-gradient(top, rgba(250,250,250, 1), rgba(250,250,250, 0.0));
+    */
+    div:first-child {
+        width: 100%;
+        height: 50%;
+        position: absolute;
+        top: 0%;
+        
+        background: -webkit-linear-gradient(top, rgb(255, 255, 255), rgba(255, 255, 255, 0));
+        
+    }
+    
+    div:nth-child(2) {
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        right: 0%;
+        
+        background: -webkit-linear-gradient(right, rgb(255, 255, 255), rgba(255, 255, 255, 0));
+        
+    }
+}
+
+.gallery-card {
+    width: 90%;
+    //opacity: 0.8;
+    padding: 5%;
+    position: relative;
+    z-index: $max-z-level;
+    background-color: $gallerycard-color;
+    margin: 10% auto;
+    border-radius: 2px;
+    
+    img {
+        width: 95%;
+        display: block;
+        opacity: 1;
+        margin: 0px auto;
+    }
+    
+    p {
+        font-family: $subFont1;
+        font-size: 1.7rem;
+        color: $tertiary-color;
+        margin: 15px auto;
+        text-align: center;
     }
 }
 
@@ -403,6 +523,20 @@ header {
             font-size: 2rem;
         }
     }
+    
+    /**************************
+            Portfolio View
+    ***************************/
+    
+    .gallery-card {
+        width: 40%;
+        padding: 2%;
+        margin: 1% 5%;
+        float: left;
+
+        p {
+        }
+    }
 }
 
 /**************************************************************************
@@ -423,6 +557,7 @@ header {
             
             li {
                 font-size: 3.5rem;
+                text-decoration: underline;
             }
         }
     }
@@ -441,6 +576,19 @@ header {
             font-size: 3rem;
         }
     }
+    
+    /**************************
+            Portfolio View
+    ***************************/
+    
+    .gallery-card {
+        width: 30%;
+        margin: 1% 1%;
+
+        p {
+            font-size: 2rem;
+        }
+    }
 }
 
 /**************************************************************************
@@ -457,6 +605,16 @@ header {
             li {
                 font-size: 4.5rem;
             }
+        }
+    }
+    
+    /**************************
+            Portfolio View
+    ***************************/
+    
+    .gallery-card {
+        p {
+            font-size: erem;
         }
     }
 }

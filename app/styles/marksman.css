@@ -5340,7 +5340,7 @@ html, body {
   padding: 5%;
   background-color: #FFF;
   position: relative;
-  z-index: 5; }
+  z-index: 3; }
   #mobileMenu div:first-child {
     width: 10%; }
     #mobileMenu div:first-child img {
@@ -5366,6 +5366,7 @@ html, body {
                              Default Css - Focused on Mobile
 ***************************************************************************/
 header {
+  width: 100vw;
   height: 10vh;
   position: relative;
   overflow: auto; }
@@ -5446,6 +5447,89 @@ header {
     margin: 0px; }
     #homeNavigation li:hover {
       color: #FFED85; }
+
+/**************************
+        Portfolio View
+***************************/
+#portfolioSectionHeader {
+  width: 100vw;
+  height: 8vh;
+  position: relative; }
+  #portfolioSectionHeader h2 {
+    font-family: "Lato-Reg";
+    color: #000;
+    width: 20%;
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+    bottom: 0%;
+    left: 3%; }
+  #portfolioSectionHeader ul {
+    width: 50%;
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
+    overflow: auto; }
+    #portfolioSectionHeader ul li {
+      width: 25%;
+      list-style: none;
+      float: left; }
+
+#galleryContainer {
+  width: 100vw;
+  height: 92vh;
+  position: relative;
+  padding: 2%;
+  overflow: auto; }
+
+#galleryBackground {
+  width: 70%;
+  height: 75%;
+  position: fixed;
+  bottom: 0%;
+  left: 0%;
+  background-image: url("../images/marksman-portfolio-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  opacity: 0.7;
+  /*background: -webkit-linear-gradient(right, rgba(250,250,250, 1), rgba(250,250,250, 0.0));
+    background: -webkit-linear-gradient(top, rgba(250,250,250, 1), rgba(250,250,250, 0.0));
+    */ }
+  #galleryBackground div:first-child {
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    top: 0%;
+    background: -webkit-linear-gradient(top, white, rgba(255, 255, 255, 0)); }
+  #galleryBackground div:nth-child(2) {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    right: 0%;
+    background: -webkit-linear-gradient(right, white, rgba(255, 255, 255, 0)); }
+
+.gallery-card {
+  width: 90%;
+  padding: 5%;
+  position: relative;
+  z-index: 5;
+  background-color: rgba(6, 31, 53, 0.8);
+  margin: 10% auto;
+  border-radius: 2px; }
+  .gallery-card img {
+    width: 95%;
+    display: block;
+    opacity: 1;
+    margin: 0px auto; }
+  .gallery-card p {
+    font-family: "Lato-Reg";
+    font-size: 1.7rem;
+    color: #FFF;
+    margin: 15px auto;
+    text-align: center; }
 
 /*#loadBackdrop {
     transition: opacity 1s linear, height 1s linear;
@@ -5529,7 +5613,15 @@ header {
   #titleContainer p {
     font-size: 40px; }
   #homeNavigation li {
-    font-size: 2rem; } }
+    font-size: 2rem; }
+  /**************************
+            Portfolio View
+    ***************************/
+  .gallery-card {
+    width: 40%;
+    padding: 2%;
+    margin: 1% 5%;
+    float: left; } }
 
 /**************************************************************************
                             Laptop & wider
@@ -5540,15 +5632,29 @@ header {
     header div:first-child {
       width: 25%; }
     header ul li {
-      font-size: 3.5rem; }
+      font-size: 3.5rem;
+      text-decoration: underline; }
   #titleContainer p {
     font-size: 50px; }
   #homeNavigation li {
-    font-size: 3rem; } }
+    font-size: 3rem; }
+  /**************************
+            Portfolio View
+    ***************************/
+  .gallery-card {
+    width: 30%;
+    margin: 1% 1%; }
+    .gallery-card p {
+      font-size: 2rem; } }
 
 /**************************************************************************
                             Laptop HD & wider
 ***************************************************************************/
 @media (min-width: 1200px) {
   header ul li {
-    font-size: 4.5rem; } }
+    font-size: 4.5rem; }
+  /**************************
+            Portfolio View
+    ***************************/
+  .gallery-card p {
+    font-size: erem; } }
