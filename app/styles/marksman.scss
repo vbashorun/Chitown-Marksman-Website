@@ -333,7 +333,7 @@ header {
 #galleryContainer {
     
     width: 100vw;
-    height: 92vh;
+    min-height: 92vh;
     position: relative;
     padding: 2%;
     overflow: auto;
@@ -386,6 +386,8 @@ header {
     margin: 10% auto;
     border-radius: 2px;
     
+    box-shadow: 0px 5px 9px rgba(0, 0, 0, 0.7);
+    
     img {
         width: 95%;
         display: block;
@@ -394,12 +396,16 @@ header {
     }
     
     p {
-        font-family: $subFont1;
+        font-family: $subFont1Alt;
         font-size: 1.7rem;
         color: $tertiary-color;
         margin: 15px auto;
         text-align: center;
     }
+}
+
+.grid-sizer {
+    display: none;
 }
 
 /*#loadBackdrop {
@@ -449,10 +455,6 @@ header {
 /*#emailConfirmation {
     @extend .textInput;
 }*/
-
-/****************************
-    Tablet/Desktop Styling
-*****************************/
 
 /**************************************************************************
                             Tablet & wider
@@ -529,13 +531,21 @@ header {
     ***************************/
     
     .gallery-card {
-        width: 40%;
+        width: 45%;
         padding: 2%;
-        margin: 1% 5%;
+        margin: 1% 1%;
         float: left;
 
         p {
         }
+    }
+    
+    .grid-sizer {
+        display: block;
+        opacity: 0;
+        width: 45%;
+        padding: 2%;
+        margin: 1% 1%;
     }
 }
 
@@ -589,6 +599,11 @@ header {
             font-size: 2rem;
         }
     }
+    
+    .grid-sizer {
+        width: 30%;
+        margin: 1% 1%;
+    }
 }
 
 /**************************************************************************
@@ -614,7 +629,7 @@ header {
     
     .gallery-card {
         p {
-            font-size: erem;
+            font-size: 3rem;
         }
     }
 }
