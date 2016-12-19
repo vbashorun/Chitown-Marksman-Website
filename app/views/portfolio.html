@@ -1,12 +1,22 @@
 <!--<ng-include src="'partials/_header.html'"></ng-include>-->
 <div id="portfolioSectionHeader">
     <h2>Portfolio</h2>
+    
+    <form>
+        <select ng-model="selectedCategory" ng-change="handleCategoryMobile()">
+            <option value="featured">Featured</option>
+            <option value="portraits">Portraits</option>
+            <option value="places">Places</option>
+            <option value="events">Events</option>
+        </select>
+        <img src="../images/arrow_down.png" />
+    </form>
 
     <ul>
-        <li>Featured</li>
-        <li>Portraits</li>
-        <li>Places</li>
-        <li>Events</li>
+        <li data-category="featured" ng-click="handleCategory($event)" class="categorySelected">Featured</li>
+        <li data-category="portraits" ng-click="handleCategory($event)">Portraits</li>
+        <li data-category="places" ng-click="handleCategory($event)">Places</li>
+        <li data-category="events" ng-click="handleCategory($event)">Events</li>
     </ul>
 </div>
 <div id="galleryContainer">

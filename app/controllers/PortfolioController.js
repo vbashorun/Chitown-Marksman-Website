@@ -9,6 +9,8 @@ app.controller('PortfolioController', ['$scope', function($scope) {
         gutter: 0
     };
     
+    $scope.selectedCategory = "featured";
+    
     $(document).ready(function() {
         //alert("portfolio controller initialized");
         
@@ -32,11 +34,31 @@ app.controller('PortfolioController', ['$scope', function($scope) {
                     $('.grid').masonry(masonryParams);
             });
         });*/
-        
-        //alert("bypassed window load");
     });
     
-    $(window).load(function() { 
-        alert("window loaded outside of ready"); 
+    $(window).load(function() {
+        alert("window ready");
     });
+    
+    $scope.handleCategory = function(eventObject) {
+        var element = eventObject.target;
+        var isSelected = $(element).hasClass("categorySelected");
+        
+        if (!isSelected) {
+            $('.categorySelected').removeClass("categorySelected");
+            $(element).addClass("categorySelected");
+            $scope.selectedCategory = element.getAttribute("data-category");
+            updatePortfolioView($scope.selectedCategory);
+        }
+    };
+    
+    $scope.handleCategoryMobile = function() {
+        //alert("current category: " + $scope.selectedCategory);
+        updatePortfolioView($scope.selectedCategory);
+    };
+    
+    function updatePortfolioView(category) {
+        
+    };
+    
 }]);
