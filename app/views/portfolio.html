@@ -20,7 +20,7 @@
     </ul>
 </div>
 <div id="galleryContainer">
-    <div id="galleryBackground">
+    <div id="portfolioViewBackground">
         <div></div>
         <div></div>
     </div>
@@ -31,7 +31,8 @@
         </div>
 
         <div class="gallery-card" ng-repeat="card in cards">
-            <div><a href="{{card.galleryLink}}">View gallery</a></div>
+            <!--<div><a href="{{card.galleryLink}}">View gallery</a></div>-->
+            <div><a href="#/gallery">View gallery</a></div>
             <img src="{{card.galleryImage}}" />
             <a><p>{{card.galleryName}}</p></a>
         </div>

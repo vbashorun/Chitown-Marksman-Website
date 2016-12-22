@@ -5369,7 +5369,8 @@ header {
   width: 100vw;
   height: 15vh;
   position: relative;
-  overflow: auto; }
+  overflow: auto;
+  z-index: 5; }
   header div:first-child {
     width: 30%;
     padding: 2%;
@@ -5479,7 +5480,7 @@ header {
       width: 100%;
       height: 100%;
       color: #FFF;
-      background-color: rgba(6, 31, 53, 0.7);
+      background-color: rgba(6, 31, 53, 0.8);
       border: 0px;
       border-radius: 2px; }
     #portfolioSectionHeader form img {
@@ -5499,7 +5500,7 @@ header {
   padding: 0% 2%;
   overflow: auto; }
 
-#galleryBackground {
+#portfolioViewBackground {
   width: 70%;
   height: 75%;
   position: fixed;
@@ -5510,13 +5511,13 @@ header {
   background-size: cover;
   background-position: center top;
   opacity: 0.7; }
-  #galleryBackground div:first-child {
+  #portfolioViewBackground div:first-child {
     width: 100%;
     height: 50%;
     position: absolute;
     top: 0%;
     background: -webkit-linear-gradient(top, white, rgba(255, 255, 255, 0)); }
-  #galleryBackground div:nth-child(2) {
+  #portfolioViewBackground div:nth-child(2) {
     width: 50%;
     height: 100%;
     position: absolute;
@@ -5552,6 +5553,61 @@ header {
 /**************************
         Gallery View
 ***************************/
+#imageViewContainer {
+  min-height: 100vh;
+  width: 100vw;
+  position: relative; }
+
+#galleryViewBackground, .gallery-grid-sizer {
+  display: none; }
+
+#galleryViewSectionHeader {
+  width: 90%;
+  margin: 0% auto; }
+  #galleryViewSectionHeader div {
+    position: relative; }
+  #galleryViewSectionHeader h2 {
+    font-family: "Lato-Reg";
+    font-size: 1.7rem;
+    letter-spacing: 1px;
+    width: 70%;
+    margin: 0px;
+    display: inline-block;
+    color: #000; }
+  #galleryViewSectionHeader a {
+    width: 30%;
+    color: #000;
+    font-family: "Lato-Reg";
+    font-size: 1rem;
+    display: block;
+    text-align: center;
+    text-decoration: underline;
+    position: absolute;
+    top: 0px;
+    right: 0px; }
+    #galleryViewSectionHeader a:hover {
+      color: #FFED85; }
+  #galleryViewSectionHeader p {
+    width: 100%;
+    font-family: "Lato-Lig";
+    font-size: 1.2rem;
+    color: #000;
+    margin: 15px 0px 0px 0px;
+    padding: 0px; }
+
+.image-card {
+  width: 90%;
+  padding: 0%;
+  position: relative;
+  z-index: 5;
+  margin: 6% auto;
+  box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.7); }
+  .image-card div {
+    display: none; }
+  .image-card img {
+    width: 100%;
+    display: block; }
+
 /*#loadBackdrop {
     transition: opacity 1s linear, height 1s linear;
     
@@ -5594,14 +5650,18 @@ header {
         font-size: 2.5rem;
         color: #061F35;
         width: 33.33333%;
-        letter-spacing: 2px;
+        letter-spacing: 3px;
         float: left;
         margin: 0px;
-        text-align: center; }
+        text-align: center;
+        text-decoration: underline; }
         header ul li:hover {
           color: #FFED85; }
   #mobileMenuButton {
     display: none; }
+  /**************************
+            Home View
+    ***************************/
   #homeBackground {
     background-position: right center; }
   #titleContainer img {
@@ -5645,20 +5705,61 @@ header {
   .categorySelected {
     background-color: rgba(98, 98, 98, 0.3);
     border-radius: 2px; }
-  .gallery-card {
-    width: 45%;
-    padding: 2%;
-    margin: 1% 1%;
-    float: left; }
   .portfolio-grid-sizer {
     display: block;
     opacity: 0;
     width: 45%;
     padding: 2%;
     margin: 1% 1%; }
+  .gallery-card {
+    width: 45%;
+    padding: 2%;
+    margin: 1% 1%;
+    float: left; }
   /**************************
             Gallery View
-    ***************************/ }
+    ***************************/
+  #galleryViewSectionHeader {
+    margin: 5% auto; }
+    #galleryViewSectionHeader h2 {
+      font-size: 2rem; }
+    #galleryViewSectionHeader a {
+      width: 30%;
+      font-size: 1.2rem;
+      text-align: right; }
+    #galleryViewSectionHeader p {
+      width: 70%;
+      font-size: 1.4rem; }
+  #galleryViewBackground {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    bottom: 0%;
+    left: 0%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    opacity: 0.3; }
+    #galleryViewBackground div:first-child {
+      width: 100%;
+      height: 50%;
+      position: absolute;
+      top: 0%;
+      background: -webkit-linear-gradient(top, white, rgba(255, 255, 255, 0)); }
+  .grid {
+    width: 95%;
+    margin: 0% auto; }
+  .gallery-grid-sizer {
+    display: block;
+    opacity: 0;
+    width: 45%;
+    padding: 2%;
+    margin: 1% 1%; }
+  .image-card {
+    width: 45%;
+    margin: 1% 1%;
+    float: left; } }
 
 /**************************************************************************
                             Laptop & wider
@@ -5687,9 +5788,12 @@ header {
       font-size: 4rem; }
     #portfolioSectionHeader ul li {
       font-size: 1.7rem; }
-  #galleryBackground {
+  #portfolioViewBackground {
     width: 80%;
     height: 70%; }
+  .portfolio-grid-sizer {
+    width: 30%;
+    margin: 1% 1%; }
   .gallery-card {
     width: 30%;
     margin: 1% 1%; }
@@ -5718,9 +5822,48 @@ header {
           color: #FFED85; }
     .gallery-card p {
       font-size: 2rem; }
-  .portfolio-grid-sizer {
+  /**************************
+            Gallery View
+    ***************************/
+  #galleryViewSectionHeader {
+    margin: 2% auto; }
+    #galleryViewSectionHeader h2 {
+      font-size: 2.7rem; }
+    #galleryViewSectionHeader a {
+      width: 30%;
+      font-size: 1.5rem;
+      text-align: right; }
+    #galleryViewSectionHeader p {
+      font-size: 1.8rem; }
+  .gallery-grid-sizer {
     width: 30%;
-    margin: 1% 1%; } }
+    margin: 1% 1%; }
+  .image-card {
+    width: 30%;
+    margin: 1% 1%; }
+    .image-card div {
+      display: block;
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(6, 31, 53, 0.8);
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      transition: opacity 0.2s linear; }
+      .image-card div:hover {
+        opacity: 1; }
+      .image-card div a {
+        text-decoration: none;
+        font-family: "Lato-Reg";
+        font-size: 2rem;
+        color: #FFF;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); }
+        .image-card div a:hover {
+          color: #FFED85; } }
 
 /**************************************************************************
                             Laptop HD & wider

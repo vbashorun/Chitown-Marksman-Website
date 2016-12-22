@@ -14,6 +14,10 @@ app.config(['$locationProvider', '$routeProvider', function($locationProvider, $
         controller: 'PortfolioController',
         templateUrl: 'views/portfolio.html'
     })
+    .when('/gallery', {
+        controller: 'GalleryController',
+        templateUrl: 'views/gallery.html'
+    })
     /*.when('/suggestion/:id', {
         controller: 'SuggestionController',
         templateUrl: 'views/suggestion.html'
