@@ -5454,7 +5454,8 @@ header {
 #portfolioSectionHeader {
   width: 100vw;
   height: 10vh;
-  position: relative; }
+  position: relative;
+  margin-bottom: 10px; }
   #portfolioSectionHeader h2 {
     font-family: "Lato-Reg";
     font-size: 2.3rem;
@@ -5495,7 +5496,7 @@ header {
   width: 100vw;
   min-height: 92vh;
   position: relative;
-  padding: 2%;
+  padding: 0% 2%;
   overflow: auto; }
 
 #galleryBackground {
@@ -5508,10 +5509,7 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center top;
-  opacity: 0.7;
-  /*background: -webkit-linear-gradient(right, rgba(250,250,250, 1), rgba(250,250,250, 0.0));
-    background: -webkit-linear-gradient(top, rgba(250,250,250, 1), rgba(250,250,250, 0.0));
-    */ }
+  opacity: 0.7; }
   #galleryBackground div:first-child {
     width: 100%;
     height: 50%;
@@ -5548,9 +5546,12 @@ header {
     margin: 15px auto;
     text-align: center; }
 
-.grid-sizer {
+.portfolio-grid-sizer {
   display: none; }
 
+/**************************
+        Gallery View
+***************************/
 /*#loadBackdrop {
     transition: opacity 1s linear, height 1s linear;
     
@@ -5561,29 +5562,7 @@ header {
         animation: wheelSpin 5s linear infinite, wheelBounce 2s linear infinite;
     }
 }*/
-/*#section1background {
-    background-image: url('../images/marksman-1.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: left top;
-}*/
-/*#chevron {
-    left: 50%;
-    transform: translateX(-50%);
-    animation: subtleLevitation 1.5s linear infinite;
-}*/
-/*.page-button {
-    
-    &:hover {
-        background-color: $primary-color;
-        color: $tertiary-color;
-    }
-}*/
 /*.textInput {
-    background-color: $primary-color;
-    color: $accent-color;
-    font-family: $subFont1Alt2;
-    
     // gonna need to spread this out for each possible browser iteration
     // separate each one, because one bad selector ruins the entire rule
     &::-webkit-input-placeholder{
@@ -5640,7 +5619,7 @@ header {
     position: relative; }
     #portfolioSectionHeader h2 {
       font-family: "Lato-Reg";
-      font-size: 2.5rem;
+      font-size: 3rem;
       color: #000;
       left: 3%; }
     #portfolioSectionHeader form {
@@ -5661,7 +5640,8 @@ header {
         width: 25%;
         list-style: none;
         float: left;
-        text-align: center; }
+        text-align: center;
+        cursor: pointer; }
   .categorySelected {
     background-color: rgba(98, 98, 98, 0.3);
     border-radius: 2px; }
@@ -5670,19 +5650,25 @@ header {
     padding: 2%;
     margin: 1% 1%;
     float: left; }
-  .grid-sizer {
+  .portfolio-grid-sizer {
     display: block;
     opacity: 0;
     width: 45%;
     padding: 2%;
-    margin: 1% 1%; } }
+    margin: 1% 1%; }
+  /**************************
+            Gallery View
+    ***************************/ }
 
 /**************************************************************************
                             Laptop & wider
 ***************************************************************************/
 @media (min-width: 992px) {
+  /**************************
+            Home View
+    ***************************/
   header {
-    height: 15vh; }
+    height: 20vh; }
     header div:first-child {
       width: 25%; }
     header ul li {
@@ -5695,6 +5681,15 @@ header {
   /**************************
             Portfolio View
     ***************************/
+  #portfolioSectionHeader {
+    margin: 0px; }
+    #portfolioSectionHeader h2 {
+      font-size: 4rem; }
+    #portfolioSectionHeader ul li {
+      font-size: 1.7rem; }
+  #galleryBackground {
+    width: 80%;
+    height: 70%; }
   .gallery-card {
     width: 30%;
     margin: 1% 1%; }
@@ -5723,7 +5718,7 @@ header {
           color: #FFED85; }
     .gallery-card p {
       font-size: 2rem; }
-  .grid-sizer {
+  .portfolio-grid-sizer {
     width: 30%;
     margin: 1% 1%; } }
 
@@ -5731,6 +5726,9 @@ header {
                             Laptop HD & wider
 ***************************************************************************/
 @media (min-width: 1200px) {
+  /**************************
+            Home View
+    ***************************/
   header ul li {
     font-size: 4.5rem; }
   /**************************

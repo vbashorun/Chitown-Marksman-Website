@@ -1,20 +1,28 @@
-app.controller('PortfolioController', ['$scope', function($scope) {
+app.controller('PortfolioController', ['$scope', 'fakeCards', function($scope, fakeCards) {
     
     var tabletWidth = 768;  // minimum width before masonryJS is instantiated
     //var masonryData = $('.grid').data('masonry'); //used for testing presence of masonry
     var masonryParams = {
         itemSelector: '.gallery-card',
-        columnWidth: '.grid-sizer',
+        columnWidth: '.portfolio-grid-sizer',
         percentPosition: true,
         gutter: 0
     };
     
     $scope.selectedCategory = "featured";
+    $scope.cards = fakeCards.cards;
+    
+    //$('.grid').masonry(masonryParams);
     
     $(document).ready(function() {
         //alert("portfolio controller initialized");
         
-        /*$(window).load(function() {
+        
+        /*var masonryData = $('.grid').data('masonry');
+        alert("masonry: " + masonryData);*/
+        
+        
+        $(window).load(function() {
             alert("window loaded");
             
             var browserWindow = $(this);
@@ -33,14 +41,14 @@ app.controller('PortfolioController', ['$scope', function($scope) {
                 else
                     $('.grid').masonry(masonryParams);
             });
-        });*/
+        });
     });
     
-    $(window).load(function() {
+    /*$(window).load(function() {
         alert("window ready");
-    });
+    });*/
     
-    $scope.handleCategory = function(eventObject) {
+    /*$scope.handleCategory = function(eventObject) {
         var element = eventObject.target;
         var isSelected = $(element).hasClass("categorySelected");
         
@@ -59,6 +67,6 @@ app.controller('PortfolioController', ['$scope', function($scope) {
     
     function updatePortfolioView(category) {
         
-    };
+    };*/
     
 }]);

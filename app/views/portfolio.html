@@ -27,43 +27,13 @@
     
     <!-- Gallery Cards -->
     <div class="grid">
-        <div class="grid-sizer">
+        <div class="portfolio-grid-sizer">
         </div>
 
-        <div class="gallery-card">
-            <div><a href="#/gallery/{{$galleryInfo/id}}">View gallery</a></div>
-            <img src="./images/marksman-slide-4.jpg" />
-            <a><p>Urban Playground</p></a>
-        </div>
-
-        <div class="gallery-card">
-            <img src="./images/marksman-slide-2.jpg" />
-            <a><p>Flower Thoughts</p></a>
-        </div>
-
-        <div class="gallery-card">
-            <img src="./images/marksman-slide-3.jpg" />
-            <a><p>Urban Anarchist</p></a>
-        </div>
-        <div class="gallery-card">
-            <img src="./images/marksman-slide-5.jpg" />
-            <a><p>Street Style w/ Stella</p></a>
-        </div>
-        
-        <div class="gallery-card">
-            <img src="./images/marksman-obey-2.jpg" />
-            <a><p>Obey</p></a>
-        </div>
-
-        <div class="gallery-card">
-            <img src="./images/marksman-bridge-1.jpg" />
-            <a><p>Frank Santana Park</p></a>
-        </div>
-
-        <div class="gallery-card">
-            <img src="./images/marksman-slide-4.jpg" />
-            <a><p>Urban Playground</p></a>
+        <div class="gallery-card" ng-repeat="card in cards">
+            <div><a href="{{card.galleryLink}}">View gallery</a></div>
+            <img src="{{card.galleryImage}}" />
+            <a><p>{{card.galleryName}}</p></a>
         </div>
     </div>
-    
 </div>
