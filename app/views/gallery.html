@@ -1,23 +1,27 @@
 <!--<ng-include src="'partials/_header.html'"></ng-include>-->
 
-<div id="imageViewContainer">
+<div id="galleryViewContainer">
+    
+    <!-- Image View will overlap gallery View when active -->
+    <div id="imageView">
+        <img src="../images/close.png" ng-click="closeImageView()" />
+        <img src="{{ focusImage }}" />
+    </div>
+    <!-- end of Image View -->
     
     <div id="galleryViewSectionHeader">
         <div>
             <h2>{{ galleryName }}</h2>
             <a href="#/portfolio">back to portfolio</a>
         </div>
-        
         <p>{{ galleryDesc }}</p>
     </div>
-    
-    
 
     <div class="grid">
         <div class="gallery-grid-sizer"></div>
 
         <div class="image-card" ng-repeat="card in cards">
-            <div><a href="#/image">Enlarge</a></div>
+            <a ng-click="enlargeImage(card.image)"><div><p>Enlarge</p></div></a>
             <img src="{{ card.image }}" />
         </div>
     </div>

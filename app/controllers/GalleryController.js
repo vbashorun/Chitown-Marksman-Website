@@ -9,6 +9,8 @@ app.controller('GalleryController', ['$scope', function($scope) {
         gutter: 0
     };
     
+    var imageRoute = "../images/";
+    
     $scope.galleryName = "Urban Playground";
     $scope.galleryDesc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu sem vehicula, "
                           + "venenatis libero eu, maximus mauris. In pellentesque blandit metus eu dictum. "
@@ -36,6 +38,8 @@ app.controller('GalleryController', ['$scope', function($scope) {
         }
     ];
     
+    $scope.focusImage = imageRoute + "marksman-slide-4.jpg";
+    
     $(document).ready(function() {
         //alert("document ready");
         
@@ -48,7 +52,7 @@ app.controller('GalleryController', ['$scope', function($scope) {
         var masonryData = $('.grid').data('masonry');
         alert("masonry: " + masonryData);*/
         
-        $('#galleryViewBackground').css({"background-image" : 'url("../images/marksman-slide-4.jpg")'});
+        $('#galleryViewBackground').css({"background-image" : 'url(' + imageRoute + "marksman-slide-4.jpg" + ')'});
         
         $('.grid').imagesLoaded().always( function( instance ) {
             // images have loaded
@@ -73,4 +77,14 @@ app.controller('GalleryController', ['$scope', function($scope) {
         });
         
     });
+    
+    $scope.enlargeImage = function(imagePath) {
+        $scope.focusImage = imagePath;
+        $('#imageView').css({"display": "block"});
+    };
+    
+    $scope.closeImageView = function() {
+        $('#imageView').css({"display": "none"});
+    };
+    
 }]);
