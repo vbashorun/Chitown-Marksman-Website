@@ -31,10 +31,9 @@
         </div>
 
         <div class="gallery-card" ng-repeat="card in cards">
-            <!--<div><a href="{{card.galleryLink}}">View gallery</a></div>-->
-            <div><a href="#/gallery">View gallery</a></div>
+            <a href="#/gallery"><div><p>View gallery</p></div></a>
             <img src="{{card.galleryImage}}" />
-            <a><p>{{card.galleryName}}</p></a>
+            <p>{{card.galleryName}}</p>
         </div>
     </div>
 </div>
