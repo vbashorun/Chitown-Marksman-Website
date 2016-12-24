@@ -5534,7 +5534,14 @@ header {
   border-radius: 2px;
   box-shadow: 0px 5px 9px rgba(0, 0, 0, 0.7); }
   .gallery-card a {
-    display: none; }
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%; }
+    .gallery-card a div {
+      display: none; }
   .gallery-card img {
     width: 95%;
     display: block;
@@ -5603,7 +5610,14 @@ header {
   margin: 6% auto;
   box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.7); }
   .image-card a {
-    display: none; }
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%; }
+    .image-card a div {
+      display: none; }
   .image-card img {
     width: 100%;
     display: block; }
@@ -5619,14 +5633,17 @@ header {
   background-color: #FFF; }
   #imageView img:first-child {
     display: block;
-    width: 3%;
+    width: 8%;
     position: absolute;
-    top: 4%;
-    left: 2%;
+    top: 3%;
+    left: 5%;
     cursor: pointer; }
   #imageView img:nth-child(2) {
     display: block;
-    height: 85%;
+    min-height: 10%;
+    max-height: 80%;
+    min-width: 10%;
+    max-width: 90%;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -5784,7 +5801,10 @@ header {
   .image-card {
     width: 45%;
     margin: 1% 1%;
-    float: left; } }
+    float: left; }
+  #imageView img:first-child {
+    width: 5%;
+    top: 5%; } }
 
 /**************************************************************************
                             Laptop & wider
@@ -5822,30 +5842,28 @@ header {
   .gallery-card {
     width: 30%;
     margin: 1% 1%; }
-    .gallery-card a {
-      display: block; }
-      .gallery-card a div {
-        display: block;
-        opacity: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(255, 255, 255, 0.75);
+    .gallery-card a div {
+      display: block;
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.75);
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      transition: opacity 0.2s linear; }
+      .gallery-card a div:hover {
+        opacity: 1; }
+      .gallery-card a div p {
+        font-family: "Lato-Reg";
+        font-size: 2rem;
+        color: #061F35;
         position: absolute;
-        top: 0%;
-        left: 0%;
-        transition: opacity 0.2s linear; }
-        .gallery-card a div:hover {
-          opacity: 1; }
-        .gallery-card a div p {
-          font-family: "Lato-Reg";
-          font-size: 2rem;
-          color: #061F35;
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%); }
-          .gallery-card a div p:hover {
-            color: #FFED85; }
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); }
+        .gallery-card a div p:hover {
+          color: #FFED85; }
     .gallery-card p {
       font-size: 2rem; }
   /**************************
@@ -5867,31 +5885,37 @@ header {
   .image-card {
     width: 30%;
     margin: 1% 1%; }
-    .image-card a {
-      display: block; }
-      .image-card a div {
-        display: block;
-        opacity: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(6, 31, 53, 0.8);
-        cursor: pointer;
+    .image-card a div {
+      display: block;
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(6, 31, 53, 0.8);
+      cursor: pointer;
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      transition: opacity 0.2s linear; }
+      .image-card a div:hover {
+        opacity: 1; }
+      .image-card a div p {
+        font-family: "Lato-Reg";
+        font-size: 2rem;
+        color: #FFF;
         position: absolute;
-        top: 0%;
-        left: 0%;
-        transition: opacity 0.2s linear; }
-        .image-card a div:hover {
-          opacity: 1; }
-        .image-card a div p {
-          font-family: "Lato-Reg";
-          font-size: 2rem;
-          color: #FFF;
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%); }
-          .image-card a div p:hover {
-            color: #FFED85; } }
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); }
+        .image-card a div p:hover {
+          color: #FFED85; }
+  #imageView img:first-child {
+    width: 3%;
+    top: 4%;
+    left: 2%; }
+  #imageView img:nth-child(2) {
+    height: 85%;
+    top: 50%;
+    left: 50%; } }
 
 /**************************************************************************
                             Laptop HD & wider
