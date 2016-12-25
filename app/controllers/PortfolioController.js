@@ -1,7 +1,8 @@
-app.controller('PortfolioController', ['$scope', 'fakeCards', function($scope, fakeCards) {
+app.controller('PortfolioController', ['$scope', 'getGalleries', '$http', function($scope, getGalleries, $http) {
     
     var tabletWidth = 768;  // minimum width before masonryJS is instantiated
     //var masonryData = $('.grid').data('masonry'); //used for testing presence of masonry
+    //alert("masonry: " + masonryData);
     var masonryParams = {
         itemSelector: '.gallery-card',
         columnWidth: '.portfolio-grid-sizer',
@@ -9,23 +10,31 @@ app.controller('PortfolioController', ['$scope', 'fakeCards', function($scope, f
         gutter: 0
     };
     
-    $scope.selectedCategory = "featured";
-    $scope.cards = fakeCards.cards;
-    
-    //$('.grid').masonry(masonryParams);
-    
     $(document).ready(function() {
-        //alert("portfolio controller initialized");
         
+        // following value persists if data doesn't load properly
+        $scope.cards = [
+            {
+                name: 'no galleries available at this time'
+            }
+        ];
         
-        /*var masonryData = $('.grid').data('masonry');
-        alert("masonry: " + masonryData);*/
+        // failed service attempt. preserving because it SHOULD be fixed at some point
+        /*$scope.cards = getGalleries.cards;
+        alert("value of cards: " + $scope.cards);*/
+        //$scope.cards = fakeCards.cards;
+    
+        // preferably, this data should come from a service component, not present in the controller
+        $scope.selectedCategory = "featured";
+        $http.get("./scripts/php/galleryQuery.php?tag=" + $scope.selectedCategory)
+        .then(function (response) 
+          {
+            $scope.cards = response.data.records;
+          });
         
-        
-        $(window).load(function() {
-            alert("window loaded");
+        $('.grid').imagesLoaded().always( function( instance ) {
             
-            var browserWindow = $(this);
+            var browserWindow = $(window);
             
             if (browserWindow.width() >= tabletWidth)
             {
@@ -48,7 +57,7 @@ app.controller('PortfolioController', ['$scope', 'fakeCards', function($scope, f
         alert("window ready");
     });*/
     
-    /*$scope.handleCategory = function(eventObject) {
+    $scope.handleCategory = function(eventObject) {
         var element = eventObject.target;
         var isSelected = $(element).hasClass("categorySelected");
         
@@ -67,6 +76,6 @@ app.controller('PortfolioController', ['$scope', 'fakeCards', function($scope, f
     
     function updatePortfolioView(category) {
         
-    };*/
+    };
     
 }]);

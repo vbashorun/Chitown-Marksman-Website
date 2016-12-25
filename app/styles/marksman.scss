@@ -362,6 +362,7 @@ header {
     width: 70%;
     height: 75%;
     position: fixed;
+    z-index: $negative-z-level;
     bottom: 0%;
     left: 0%;
     background-image: url('../images/marksman-portfolio-background.jpg');
@@ -558,30 +559,6 @@ header {
         transform: translate(-50%, -50%);
     }
 }
-
-
-/*#loadBackdrop {
-    transition: opacity 1s linear, height 1s linear;
-    
-    img {
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        animation: wheelSpin 5s linear infinite, wheelBounce 2s linear infinite;
-    }
-}*/
-
-/*.textInput {
-    // gonna need to spread this out for each possible browser iteration
-    // separate each one, because one bad selector ruins the entire rule
-    &::-webkit-input-placeholder{
-        color: $accent-color;
-    }
-}*/
-
-/*#emailConfirmation {
-    @extend .textInput;
-}*/
 
 /**************************************************************************
                             Tablet & wider

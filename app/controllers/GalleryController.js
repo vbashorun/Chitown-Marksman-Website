@@ -9,7 +9,7 @@ app.controller('GalleryController', ['$scope', function($scope) {
         gutter: 0
     };
     
-    var imageRoute = "../images/";
+    var imageRoute = "./images/";
     
     $scope.galleryName = "Urban Playground";
     $scope.galleryDesc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu sem vehicula, "
