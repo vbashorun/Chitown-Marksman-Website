@@ -1,5 +1,4 @@
-// utilize $routeParams to get info for the gallery to serve up. may need to reference angular docs
-app.controller('GalleryController', ['$scope', '$routeParams', '$http',  function($scope, $routeParams, $http) { 
+app.controller('GalleryController', ['$scope', '$routeParams', '$http',  function($scope, $routeParams, $http) {
     
     var tabletWidth = 768;  // minimum width before masonryJS is instantiated
     var masonryParams = {

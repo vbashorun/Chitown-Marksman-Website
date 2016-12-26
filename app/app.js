@@ -23,13 +23,9 @@ app.config(['$locationProvider', '$routeProvider', function($locationProvider, $
         templateUrl: 'views/about.html'
     })
     .when('/contact', {
-        controller: 'GalleryController',
+        controller: 'ContactController',
         templateUrl: 'views/contact.html'
     })
-    /*.when('/suggestion/:id', {
-        controller: 'SuggestionController',
-        templateUrl: 'views/suggestion.html'
-    })*/
     .otherwise({
         redirectTo: '/'
     });
