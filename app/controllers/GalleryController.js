@@ -1,5 +1,5 @@
 // utilize $routeParams to get info for the gallery to serve up. may need to reference angular docs
-app.controller('GalleryController', ['$scope', function($scope) { 
+app.controller('GalleryController', ['$scope', '$routeParams', '$http',  function($scope, $routeParams, $http) { 
     
     var tabletWidth = 768;  // minimum width before masonryJS is instantiated
     var masonryParams = {
@@ -9,74 +9,83 @@ app.controller('GalleryController', ['$scope', function($scope) {
         gutter: 0
     };
     
-    var imageRoute = "./images/";
-    
-    $scope.galleryName = "Urban Playground";
-    $scope.galleryDesc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu sem vehicula, "
-                          + "venenatis libero eu, maximus mauris. In pellentesque blandit metus eu dictum. "
-                          + "Donec tristique augue placerat, semper dolor eu, cursus ligula.";
-    
-    $scope.cards = [
-        
-        {
-            image: "./images/galleries/urban_playground/img_5360.jpg"
-        },
-        {
-            image: "./images/galleries/urban_playground/img_5328.jpg"
-        },
-        {
-            image: "./images/galleries/urban_playground/img_5375.jpg"
-        },
-        {
-            image: "./images/galleries/urban_playground/img_5379.jpg"
-        },
-        {
-            image: "./images/galleries/urban_playground/img_5435.jpg"
-        },
-        {
-            image: "./images/galleries/urban_playground/img_5482.jpg"
-        }
-    ];
-    
-    $scope.focusImage = imageRoute + "marksman-slide-4.jpg";
-    
     $(document).ready(function() {
-        //alert("document ready");
+
+        /*$scope.cards = [
         
-        /*$(window).load(function() {
-            alert("window loaded");
-            $('.grid').masonry(masonryParams);
-        });*/
-        
-        /*$('.grid').masonry(masonryParams);
-        var masonryData = $('.grid').data('masonry');
-        alert("masonry: " + masonryData);*/
-        
-        $('#galleryViewBackground').css({"background-image" : 'url(' + imageRoute + "marksman-slide-4.jpg" + ')'});
-        
-        $('.grid').imagesLoaded().always( function( instance ) {
-            // images have loaded
-            //alert("window loaded");
-            
-            var browserWindow = $(window);
-            
-            if (browserWindow.width() >= tabletWidth)
+
             {
-                $('.grid').masonry(masonryParams);
+                image: "./images/galleries/urban_playground/img_5360.jpg"
+            },
+            {
+                image: "./images/galleries/urban_playground/img_5328.jpg"
+            },
+            {
+                image: "./images/galleries/urban_playground/img_5375.jpg"
+            },
+            {
+                image: "./images/galleries/urban_playground/img_5379.jpg"
+            },
+            {
+                image: "./images/galleries/urban_playground/img_5435.jpg"
+            },
+            {
+                image: "./images/galleries/urban_playground/img_5482.jpg"
             }
-            
-            // adjust masonryJS on resize
-            browserWindow.resize(function() {
-                if (browserWindow.width() < tabletWidth)
-                {
-                    $('.grid').masonry('destroy');
-                }
-                else
-                    $('.grid').masonry(masonryParams);
-            });
-        });
+        ];*/
         
+        $scope.cards = [];
+        loadGallery($routeParams.id);
     });
+    
+    function loadGallery(id) {
+         
+        // failed service attempt. preserving because it SHOULD be fixed at some point
+        /*$scope.cards = getGalleries.cards;
+        alert("value of cards: " + $scope.cards);*/
+        //$scope.cards = fakeCards.cards;
+    
+        // preferably, this data should come from a service component utilized by this method, 
+        // not directlypresent in the controller
+        
+        $http.get("./scripts/php/galleryQuery.php?id=" + id)
+        .then(function (response) 
+          {
+            $scope.gallery = response.data.records[0];
+            
+            $scope.gallery.images.split(",").forEach(function(item, index) {
+                $scope.cards.push(
+                    { image: $scope.gallery.location + '/' + item }
+                );
+            });
+            
+            $('#galleryViewBackground')
+                .css({"background-image" : 'url(' + $scope.gallery.location + '/' + $scope.gallery.cover + ')'});
+            
+            
+            $('.grid').imagesLoaded().always( function( instance ) { 
+            
+                var browserWindow = $(window);
+
+                if (browserWindow.width() >= tabletWidth)
+                {
+                    $('.grid').masonry(masonryParams);
+                }
+
+                // adjust masonryJS on resize
+                browserWindow.resize(function() {
+                    if (browserWindow.width() < tabletWidth)
+                    {
+                        $('.grid').masonry('destroy');
+                    }
+                    else
+                        $('.grid').masonry(masonryParams);
+                });
+            });
+            
+            
+          });
+    };
     
     $scope.enlargeImage = function(imagePath) {
         $scope.focusImage = imagePath;

@@ -9,7 +9,7 @@
             <option value="places">Places</option>
             <option value="events">Events</option>
         </select>
-        <img src="../images/arrow_down.png" />
+        <img src="./images/arrow_down.png" />
     </form>
 
     <ul>
@@ -29,11 +29,11 @@
     <div class="grid">
         <div class="portfolio-grid-sizer">
         </div>
-
-        <div class="gallery-card" ng-repeat="card in cards">
-            <a href="#/gallery"><div><p>View gallery</p></div></a>
-            <img src="{{card.cover}}" />
-            <p>{{card.name}}</p>
+    
+        <div class="gallery-card" ng-repeat="card in cards"> <!-- note: you can sort ng-repeat items -->
+            <a href="#/gallery/{{ card.id }}"><div><p>View gallery</p></div></a>
+            <img src="{{ card.location + '/' + card.cover }}" />
+            <p>{{ card.name }}</p>
         </div>
     </div>
 </div>

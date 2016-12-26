@@ -6,10 +6,10 @@ $dbPassword = 'password';
 $dbName = 'chitown_marksman';
 $port = 8080;
 
-$galleryId = trim($_GET["id"]);
+$tagName = trim($_GET["tag"]);
 
 //sql statements
-$sqlSelect = "SELECT name, cover, description, location, images FROM galleries WHERE id = '$galleryId'";
+$sqlSelect = "SELECT name, cover, location, id FROM galleries WHERE tags LIKE '%$tagName%' ORDER BY ID";
 
 //connect to database and verify connection
 $con = mysqli_connect($dbHost, $dbUser, $dbPassword, $dbName);
@@ -27,15 +27,14 @@ $outp = "";
 //break result set into array
 while($row = mysqli_fetch_array($result)) 
 {    
+    if ($outp != "") {$outp .= ",";}
     $outp .= '{"name":"'  . $row["name"]     . '",';
-    $outp .= '"description":"'   . $row["description"]   . '",';
     $outp .= '"cover":"'   . $row["cover"]   . '",';
     $outp .= '"location":"'   . $row["location"]   . '",';
-    $outp .= '"images":"'. $row["images"]            . '"}';
+    $outp .= '"id":"'. $row["id"]            . '"}';
 }
 
 $outp ='{"records":['.$outp.']}';
-
 $con->close();
 
 echo($outp);

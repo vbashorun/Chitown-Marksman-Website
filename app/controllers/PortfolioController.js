@@ -1,4 +1,4 @@
-app.controller('PortfolioController', ['$scope', 'getGalleries', '$http', function($scope, getGalleries, $http) {
+app.controller('PortfolioController', ['$scope', '$http', function($scope, $http) {
     
     var tabletWidth = 768;  // minimum width before masonryJS is instantiated
     //var masonryData = $('.grid').data('masonry'); //used for testing presence of masonry
@@ -19,20 +19,12 @@ app.controller('PortfolioController', ['$scope', 'getGalleries', '$http', functi
             }
         ];
         
-        // failed service attempt. preserving because it SHOULD be fixed at some point
-        /*$scope.cards = getGalleries.cards;
-        alert("value of cards: " + $scope.cards);*/
-        //$scope.cards = fakeCards.cards;
-    
-        // preferably, this data should come from a service component, not present in the controller
         $scope.selectedCategory = "featured";
-        $http.get("./scripts/php/galleryQuery.php?tag=" + $scope.selectedCategory)
-        .then(function (response) 
-          {
-            $scope.cards = response.data.records;
-          });
+        
+        updatePortfolioView($scope.selectedCategory);
         
         $('.grid').imagesLoaded().always( function( instance ) {
+            
             
             var browserWindow = $(window);
             
@@ -53,11 +45,8 @@ app.controller('PortfolioController', ['$scope', 'getGalleries', '$http', functi
         });
     });
     
-    /*$(window).load(function() {
-        alert("window ready");
-    });*/
-    
     $scope.handleCategory = function(eventObject) {
+        
         var element = eventObject.target;
         var isSelected = $(element).hasClass("categorySelected");
         
@@ -70,12 +59,25 @@ app.controller('PortfolioController', ['$scope', 'getGalleries', '$http', functi
     };
     
     $scope.handleCategoryMobile = function() {
-        //alert("current category: " + $scope.selectedCategory);
         updatePortfolioView($scope.selectedCategory);
     };
     
     function updatePortfolioView(category) {
         
+        // failed service attempt. preserving because it SHOULD be fixed at some point
+        /*$scope.cards = getGalleries.cards;
+        alert("value of cards: " + $scope.cards);*/
+        //$scope.cards = fakeCards.cards;
+    
+        // preferably, this data should come from a service component utilized by this method, 
+        // not directlypresent in the controller
+        
+        $http.get("./scripts/php/portfolioQuery.php?tag=" + category)
+        .then(function (response) 
+          {
+            //$scope.cards = response.data.records;
+            $scope.cards = response.data.records;
+          });
     };
     
 }]);
