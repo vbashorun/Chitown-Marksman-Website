@@ -59,8 +59,7 @@ app.controller('GalleryController', ['$scope', '$routeParams', '$http',  functio
             });
             
             $('#galleryViewBackground')
-                .css({"background-image" : 'url(' + $scope.gallery.location + '/' + $scope.gallery.cover + ')'});
-            
+                .css({"background-image" : 'url(' + $scope.gallery.location + '/' + $scope.gallery.cover + ')'});          
             
             $('.grid').imagesLoaded().always( function( instance ) { 
             
@@ -81,8 +80,6 @@ app.controller('GalleryController', ['$scope', '$routeParams', '$http',  functio
                         $('.grid').masonry(masonryParams);
                 });
             });
-            
-            
           });
     };
     

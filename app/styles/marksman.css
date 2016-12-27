@@ -5650,35 +5650,113 @@ header {
     left: 50%;
     transform: translate(-50%, -50%); }
 
+/**************************
+        About View
+***************************/
+#aboutContainer {
+  width: 100vw;
+  height: 85vh;
+  position: relative; }
+
+#aboutViewBackground {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: -1;
+  background-image: url("../images/marksman-bridge-1.JPG");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top; }
+  #aboutViewBackground div:first-child {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(6, 31, 53, 0.8); }
+  #aboutViewBackground div:nth-child(2) {
+    display: block;
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    height: 60%;
+    background: -webkit-linear-gradient(top, white, rgba(255, 255, 255, 0)); }
+
+#aboutContent {
+  width: 85%;
+  height: 90%;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%); }
+  #aboutContent p:first-child {
+    color: #061F35;
+    font-family: "Waterlily Script";
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+    text-align: center;
+    width: 100%;
+    margin: 0px;
+    padding: 0px; }
+  #aboutContent p:nth-child(2) {
+    color: #FFF;
+    font-family: "Lato-Lig";
+    font-size: 1.7rem;
+    width: 100%;
+    margin: 10% 0%;
+    padding: 0px; }
+
+#socialMediaBlock {
+  width: 70%;
+  height: 20vh;
+  margin: 0% auto; }
+  #socialMediaBlock div {
+    width: 100%;
+    height: 50%;
+    margin: 3% 0%;
+    position: relative; }
+    #socialMediaBlock div img {
+      display: block;
+      max-width: 30%;
+      max-height: 100%;
+      padding: 5%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%); }
+    #socialMediaBlock div a {
+      cursor: pointer; }
+    #socialMediaBlock div a:nth-child(1) img {
+      left: 0%; }
+    #socialMediaBlock div a:nth-child(2) img {
+      left: 50%;
+      transform: translate(-50%, -50%); }
+    #socialMediaBlock div a:nth-child(3) img {
+      right: 0%; }
+
 /**************************************************************************
                             Tablet & wider
 ***************************************************************************/
 @media (min-width: 768px) {
-  header {
-    height: 15vh; }
-    header div:first-child {
-      width: 25%; }
-    header ul {
-      width: 50%;
-      display: block;
-      position: absolute;
-      right: 0%;
-      bottom: 10%;
-      padding: 0px;
-      margin: 0px; }
-      header ul li {
-        list-style: none;
-        font-family: "Waterlily Script";
-        font-size: 2.5rem;
-        color: #061F35;
-        width: 33.33333%;
-        letter-spacing: 3px;
-        float: left;
-        margin: 0px;
-        text-align: center;
-        text-decoration: underline; }
-        header ul li:hover {
-          color: #FFED85; }
+  header div:first-child {
+    width: 25%; }
+  header ul {
+    width: 50%;
+    display: block;
+    position: absolute;
+    right: 0%;
+    bottom: 10%;
+    padding: 0px;
+    margin: 0px; }
+    header ul li {
+      list-style: none;
+      font-family: "Waterlily Script";
+      font-size: 2.5rem;
+      color: #061F35;
+      width: 33.33333%;
+      letter-spacing: 3px;
+      float: left;
+      margin: 0px;
+      text-align: center;
+      text-decoration: underline; }
+      header ul li:hover {
+        color: #FFED85; }
   #mobileMenuButton {
     display: none; }
   /**************************
@@ -5785,7 +5863,36 @@ header {
     float: left; }
   #imageView img:first-child {
     width: 5%;
-    top: 5%; } }
+    top: 5%; }
+  /**************************
+            About View
+    ***************************/
+  #aboutViewBackground {
+    width: 60%;
+    height: 85vh;
+    position: fixed;
+    bottom: 0%;
+    left: 0%; }
+    #aboutViewBackground div:first-child {
+      height: 50%;
+      position: absolute;
+      top: 0%;
+      background: -webkit-linear-gradient(top, white, rgba(255, 255, 255, 0)); }
+    #aboutViewBackground div:nth-child(2) {
+      width: 50%;
+      height: 100%;
+      position: absolute;
+      right: 0%;
+      background: -webkit-linear-gradient(right, white, rgba(255, 255, 255, 0)); }
+  #aboutContent {
+    width: 50%;
+    right: 5%;
+    transform: translateY(-50%); }
+    #aboutContent p:first-child {
+      text-align: center; }
+    #aboutContent p:nth-child(2) {
+      color: #061F35;
+      font-size: 1.8rem; } }
 
 /**************************************************************************
                             Laptop & wider
@@ -5896,7 +6003,29 @@ header {
   #imageView img:nth-child(2) {
     height: 85%;
     top: 50%;
-    left: 50%; } }
+    left: 50%; }
+  /**************************
+            About View
+    ***************************/
+  #aboutViewBackground {
+    height: 80vh; }
+  #aboutContent {
+    width: 50%;
+    right: 5%;
+    transform: translateY(-50%); }
+    #aboutContent p:first-child {
+      text-align: center;
+      font-size: 3rem; }
+    #aboutContent p:nth-child(2) {
+      font-size: 2.2rem;
+      margin: 7% 0%; }
+  #socialMediaBlock {
+    width: 55%; }
+    #socialMediaBlock div img {
+      padding: 3%; }
+      #socialMediaBlock div img:hover {
+        background-color: #061F35;
+        border-radius: 4px; } }
 
 /**************************************************************************
                             Laptop HD & wider
