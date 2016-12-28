@@ -25,7 +25,6 @@ app.controller('PortfolioController', ['$scope', '$http', function($scope, $http
         
         $('.grid').imagesLoaded().always( function( instance ) {
             
-            
             var browserWindow = $(window);
             
             if (browserWindow.width() >= tabletWidth)
