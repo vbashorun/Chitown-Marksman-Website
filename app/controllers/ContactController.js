@@ -1,16 +1,26 @@
-app.controller('HomeController', ['$scope', function($scope) {
+app.controller('ContactController', ['$scope', '$http', function($scope, $http) {
     
-    function validateEmail() {
-
-        var visitorEmail = document.getElementById("visitorEmail"),
-            emailSubject = document.getElementById("emailSubject"),
-            emailMessage = document.getElementById("emailMessage");
-
-        //alert("value of sender: " + visitorEmail.value + "\n value of subject: " + emailSubject.value + "\n value of message: " + emailMessage.value);
-
-        var missingEmail = (visitorEmail.value == ""), 
-            missingSubject = (emailSubject.value == ""), 
-            missingMessage = (emailMessage.value == "");
+    $(document).ready(function() {
+        
+        $scope.visitorEmail = "";
+        $scope.emailSubject = "";
+        $scope.emailMessage = "";
+        
+    });
+    
+    $scope.openMessageForm = function() {
+        $("#messageForm").css({"display" : "block"});
+    };
+    
+    $scope.closeMessageForm = function() {
+        $("#messageForm").css({"display" : "none"});
+    };
+    
+    $scope.validateEmail = function() {
+        
+        var missingEmail = ($scope.visitorEmail == ""), 
+            missingSubject = ($scope.emailSubject == ""), 
+            missingMessage = ($scope.emailMessage == "");
 
         if (missingEmail)
         {
@@ -26,14 +36,13 @@ app.controller('HomeController', ['$scope', function($scope) {
         {
             alert("Um....kinda need a message....");
             return false;
-
         }
         else
-            sendEmail(visitorEmail, emailSubject, emailMessage);
-
-    }
+            sendEmail($scope.visitorEmail, $scope.emailSubject, $scope.emailMessage);
+    };
 
     function sendEmail(visitorEmail, emailSubject, emailMessage) {
+        
         var xmlhttp;
 
         if (window.XMLHttpRequest)
@@ -56,18 +65,20 @@ app.controller('HomeController', ['$scope', function($scope) {
                 var response = xmlhttp.responseText;
 
                 if (response == "Message Sent") {
-                    $("#section3Content [type*=text], #sendMailButton").css({"display" : "none"});
                     $("#emailConfirmation").css({"display" : "block"});
+                    $scope.visitorEmail = "";
+                    $scope.emailSubject = "";
+                    $scope.emailMessage = "";
                 }
             }
         }
 
         //set up request and use unique id to avoid cached result
-        xmlhttp.open("POST","scripts/sendMailChitown.php",true);
+        xmlhttp.open("POST","./scripts/php/sendMailChitown.php",true);
         xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
         var mailParams = "visitorEmail=" + visitorEmail.value + "&emailSubject=" + emailSubject.value + "&emailMessage=" + emailMessage.value
         xmlhttp.send(mailParams);
-    }
+    };
     
 }]);
 

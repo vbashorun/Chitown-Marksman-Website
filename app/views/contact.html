@@ -1,22 +1,49 @@
 <ng-include src="'./partials/_header.html'"></ng-include>
 
-<form>
-    <div class="container-fluid">
-        <div id="section3" class="section">
-            <div id="section3background"></div>
-            <div class="overlay-white"></div>
-            <div id="section3Content" class="contentContainer">
-                <h1>Contact Me</h1>
-                <input type="text" id="visitorEmail" class="textInput" placeholder="Your Email:" />
-                <input type="text" id="emailSubject" class="textInput" placeholder="Subject:" />
-                <textarea type="text" id="emailMessage" class="textInput textArea" placeholder="Message:" maxlength="300" ></textarea>
-                <div id="sendMailButton" onclick="validateEmail()">Submit</div>
-
-                <div id="emailConfirmation">
-                    Message sent! I'll get back to you as soon as I can!
-                </div>
-            </div>
+<form id="contactViewContainer">
+    
+    <div id="contactViewBackground">
+        <div></div>
+        <div></div>
+    </div>
+    
+    <div id="contactComponentContainer">
+         <div id="contactInfo">
+             <div>
+                 <img src="./images/icon_contact_location.png" />
+                 <p>San Jose, CA</p>
+             </div>
+             
+             <div>
+                 <img src="./images/icon_contact_email.png" />
+                 <p>vic@chitownmarksman.com</p>
+             </div>
+             
+             <div>
+                 <img src="./images/icon_contact_phone.png" />
+                 <p>773-729-7741</p>
+             </div>
+             
+            <button id="" ng-click="openMessageForm()">Send Me a Message</button>
         </div>
 
+        <div id="messageForm">
+            <img src="./images/close.png" ng-click="closeMessageForm()" />
+            
+            <div>
+                <p>Send Me a Message</p>
+                <input type="text" ng-model="visitorEmail" placeholder="Your Email:" />
+                <input type="text" ng-model="emailSubject" placeholder="Subject:" />
+                <textarea type="text" ng-model="emailMessage" placeholder="Message:" maxlength="300" ></textarea>
+                <button id="sendMailButton" ng-click="validateEmail()">Send</button>
+            </div>
+            
+
+            <!--<div id="emailConfirmation">
+                <p>Message sent! I'll get back to you as soon as I can!</p>
+            </div>-->
+        </div>
     </div>
+    
+   
 </form>

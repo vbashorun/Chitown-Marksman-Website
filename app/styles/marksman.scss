@@ -19,6 +19,8 @@ $categorySelected: rgba(98, 98, 98, 0.3);
 $gallerycard-color: rgba(6, 31, 53, 0.8);
 $white-transparent: rgba(255, 255, 255, 0.75);
 $bluetransparent: rgba(6, 31, 53, 0.8);
+$black-transparent: rgba(0, 0, 0, 0.6);
+$transparent: rgba(0,0,0,0.0);
 
 $max-z-level: 10;
 $z-level-4: 7;
@@ -229,12 +231,14 @@ header {
 ***************************/
 
 #viewDiv {
+    
     width: 100vw;
     height: 100vh;
     position: relative;
 }
 
 #homeBackground {
+    
     width: 100vw;
     height: 100vh;
     position: relative;
@@ -570,12 +574,14 @@ header {
 ***************************/
 
 #aboutContainer {
+    
     width: 100vw;
     height: 85vh;
     position: relative;
 }
 
 #aboutViewBackground {
+    
     width: 100%;
     height: 100%;
     position: relative;
@@ -679,6 +685,186 @@ header {
         }
     }
 }
+
+/**************************
+        Contact View
+***************************/
+#contactViewContainer {
+    width: 100vw;
+    min-height: 100vh;
+    position: relative;
+}
+
+#contactViewBackground {
+    
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background-image: url('../images/marksman-contact-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    
+    div:first-child {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        background-color: $black-transparent;
+    }
+    
+    div:nth-child(2) {
+        width: 100%;
+        height: 60%;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        background: -webkit-linear-gradient(top, rgb(255, 255, 255), rgba(255, 255, 255, 0));
+    }
+    
+}
+
+#contactComponentContainer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+
+#contactInfo {
+    
+    width: 90%;
+    height: 85%;
+    background-color: $primary-color;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    
+    div {
+        width: 100%;
+        height: 15%;
+        margin: 15% auto;
+        padding: 0px;
+        position: relative;
+        
+        img {
+            display: block;
+            max-height: 50%;
+            position: absolute;
+            top: 0%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        p {
+            display: inline-block;
+            color: $tertiary-color;
+            font-size: 2rem;
+            font-family: $subFont1;
+            max-height: 50%;
+            max-width: 100%;
+            margin: 0px;
+            position: absolute;
+            transform: translateX(-50%);
+            bottom: 0%;
+            left: 50%;
+        }
+    }
+    
+    button {
+        width: 45%;
+        height: 45px;
+        border: 2px solid $tertiary-color;
+        border-radius: 3px;
+        background-color: $transparent;
+        color: $tertiary-color;
+        text-align: center;
+        font-size: 1rem;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+#messageForm {
+    
+    display: none;
+    width: 100vw;
+    min-height: 100vh;
+    background-color: $tertiary-color;
+    position: fixed;
+    top: 0%;
+    right: 0%;
+    z-index: $max-z-level;
+    
+    img {
+        display: block;
+        width: 8%;
+        position: absolute;
+        top: 3%;
+        left: 5%;
+        cursor: pointer;
+    }
+    
+    div {
+        
+        width: 90%;
+        height: 80%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+        p {
+            color: $primary-color;
+            margin: 0px;
+            font-family: $subFont1;
+            font-size: 2.7rem;
+            text-align: center;
+        }
+        
+        input, textarea {
+            width: 100%;
+            height: 40px;
+            margin: 5% 0%;
+            background-color: $primary-color;
+            color: $tertiary-color;
+            border: 0px;
+            font-size: 1.7rem;
+            padding: 10px;
+        }
+        
+        textarea {
+            height: 50%
+        }
+        
+        button {
+            
+            width: 45%;
+            height: 45px;
+            background-color: $transparent;
+            border: 2px solid $primary-color;
+            border-radius: 3px;
+            color: $primary-color;
+            text-align: center;
+            font-size: 1rem;
+            position: absolute;
+            right: 0%;
+            
+            &:hover {
+                    background-color: $primary-color;
+                    color: $tertiary-color;
+                }
+        }
+    }
+}
+
 
 /**************************************************************************
                             Tablet & wider
@@ -938,6 +1124,42 @@ header {
             font-size: 1.8rem;
         }
     }
+    
+    
+    /**************************
+            Contact View
+    ***************************/
+    
+    #contactInfo {
+
+        div {
+            margin: 7% auto;
+        }
+
+        button {
+            width: 30%;
+        }
+    }
+
+    #messageForm {
+
+        img {
+            width: 4%;
+            top: 5%;
+        }
+
+        div {
+
+            input, textarea {
+                margin: 2% 0%;
+            }
+
+            button {
+
+                width: 25%;
+            }
+        }
+    }
 }
 
 /**************************************************************************
@@ -1177,6 +1399,60 @@ header {
                 border-radius: 4px;
             }
         } 
+    }
+    
+    /**************************
+            Contact View
+    ***************************/
+    
+    #contactComponentContainer {
+        width: 75%;
+        height: 90%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    #contactInfo {
+    
+        width: 40%;
+        left: 0%;
+        transform: translateY(-50%);
+        z-index: $z-level-4;
+        
+        div {
+            margin: 15% auto;
+        }
+
+        button {
+            display: none;
+        }
+    }
+
+    #messageForm {
+
+        display: block;
+        width: 75%;
+        min-height: 100%;
+        max-height: 100%;
+        background-color: $white-transparent;
+        position: absolute;
+        z-index: $z-level-3;
+        
+        img {
+            display: none;
+        }
+        
+        div {
+            width: 70%;
+            left: 25%;
+            transform: translateY(-50%);
+            
+            button {
+                font-size: 1.5rem;
+            }
+        }
     }
 }
 
