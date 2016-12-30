@@ -110,6 +110,7 @@ html, body {
     top: 0px;
     right: 0px;
 }
+
 /****************************
     Animations
 *****************************/
@@ -129,6 +130,24 @@ html, body {
     50% { top: 45%; }
     100% { top: 50%; }
 }
+
+/****************************
+    Mixins
+*****************************/
+
+/*@mixin animation($value) {
+    -webkit-animation: $value;
+    -moz-animation: $value;
+    -ms-animation: $value;
+    animation: $value;
+}
+
+@mixin border-radius($value) {
+    -webkit-border-radius: $value;
+    -moz-border-radius: $value;
+    -ms-border-radius: $value;
+    border-radius: $value;
+}*/
 
 /**************************************************************************
                              Default Css - Focused on Mobile
