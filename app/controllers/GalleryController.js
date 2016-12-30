@@ -7,11 +7,12 @@ app.controller('GalleryController', ['$scope', '$routeParams', '$http',  functio
         percentPosition: true,
         gutter: 0
     };
-    
+
     $(document).ready(function() {
+        
+        console.log("gallery controller: document ready");
 
         /*$scope.cards = [
-        
 
             {
                 image: "./images/galleries/urban_playground/img_5360.jpg"
@@ -47,40 +48,63 @@ app.controller('GalleryController', ['$scope', '$routeParams', '$http',  functio
         // preferably, this data should come from a service component utilized by this method, 
         // not directlypresent in the controller
         
+        
         $http.get("./scripts/php/galleryQuery.php?id=" + id)
-        .then(function (response) 
-          {
+        .then(function (response) {
             $scope.gallery = response.data.records[0];
             
-            $scope.gallery.images.split(",").forEach(function(item, index) {
+            $('#galleryViewBackground')
+                .css({"background-image" : 'url(' + $scope.gallery.location + '/' + $scope.gallery.cover + ')'});
+            
+            var imageArray = $scope.gallery.images.split(",");
+            imageArray.forEach(function(item, index) {
+                
+                //console.log("pushing item [" + index + "]");
                 $scope.cards.push(
                     { image: $scope.gallery.location + '/' + item }
                 );
             });
+        });
             
-            $('#galleryViewBackground')
-                .css({"background-image" : 'url(' + $scope.gallery.location + '/' + $scope.gallery.cover + ')'});          
-            
-            $('.grid').imagesLoaded().always( function( instance ) { 
-            
-                var browserWindow = $(window);
+        // alternative method: try detecting for a masonry instance, broadcast an event, and then take load animation down
+        // OR use .progress to determine if image is last one in set and THEN trigger masonry
 
-                if (browserWindow.width() >= tabletWidth)
+        /*$('.grid').imagesLoaded(function() {
+
+            var browserWindow = $(window);
+
+            if (browserWindow.width() >= tabletWidth)
+            {
+                $('.grid').masonry(masonryParams);
+                // reset layout after a few seconds so that images don't stay stacked.
+                setTimeout(function() { $('.grid').masonry('layout'); }, 5000);
+            }
+
+            // adjust masonryJS on resize
+            browserWindow.resize(function() {
+                if (browserWindow.width() < tabletWidth)
                 {
-                    $('.grid').masonry(masonryParams);
+                    $('.grid').masonry('destroy');
                 }
-
-                // adjust masonryJS on resize
-                browserWindow.resize(function() {
-                    if (browserWindow.width() < tabletWidth)
-                    {
-                        $('.grid').masonry('destroy');
-                    }
-                    else
-                        $('.grid').masonry(masonryParams);
-                });
+                else
+                    $('.grid').masonry(masonryParams);
             });
-          });
+        });*/
+            
+            
+            ////////////////////////////////
+            
+            /*// init Masonry
+            // Initialize Masonry, then trigger layout after each image loads.
+            var $grid = $('.grid').masonry({
+              // options...
+            });
+            // layout Masonry after each image loads
+            $grid.imagesLoaded().progress( function() {
+              $grid.masonry('layout');
+            });*/
+            
+            ////////////////////////////////
     };
     
     $scope.enlargeImage = function(imagePath) {
