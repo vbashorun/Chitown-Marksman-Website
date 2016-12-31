@@ -11,6 +11,19 @@ app.controller('GalleryController', ['$scope', '$routeParams', '$http',  functio
     $(document).ready(function() {
         
         console.log("gallery controller: document ready");
+        
+        var browserWindow = $(window);
+
+        if (browserWindow.width() >= tabletWidth)
+            $('.grid').masonry(masonryParams);
+
+        // adjust masonryJS on resize
+        browserWindow.resize(function() {
+            if (browserWindow.width() < tabletWidth)
+                $('.grid').masonry('destroy');
+            else
+                $('.grid').masonry(masonryParams);
+        });
 
         /*$scope.cards = [
 
@@ -56,65 +69,22 @@ app.controller('GalleryController', ['$scope', '$routeParams', '$http',  functio
             $('#galleryViewBackground')
                 .css({"background-image" : 'url(' + $scope.gallery.location + '/' + $scope.gallery.cover + ')'});
             
-            $scope.gallery.images.split(",").forEach(function(item, index) {
+            var imageArray = $scope.gallery.images.split(",");
+            imageArray.forEach(function(item, index) {
                 $scope.cards.push(
                     { image: $scope.gallery.location + '/' + item }
                 );
             }); 
             
-            // alternative method: try detecting for a masonry instance, broadcast an event, and then take load animation down
-            // OR use .progress to determine if image is last one in set and THEN trigger masonry
-            
-            $('.grid').imagesLoaded().always( function( instance ) {
-            
-                var browserWindow = $(window);
-
-                if (browserWindow.width() >= tabletWidth)
-                {
-                    $('.grid').masonry(masonryParams);
-                }
-
-                // adjust masonryJS on resize
-                browserWindow.resize(function() {
-                    if (browserWindow.width() < tabletWidth)
-                    {
-                        $('.grid').masonry('destroy');
-                    }
-                    else
-                        $('.grid').masonry(masonryParams);
-                });
-            });
-            // $('.grid').masonry(masonryParams);
-            
-            
-            ////////////////////////////////
-            
-            /*// init Masonry
-            // Initialize Masonry, then trigger layout after each image loads.
-            var $grid = $('.grid').masonry({
-              // options...
-            });
-            // layout Masonry after each image loads
-            $grid.imagesLoaded().progress( function() {
-              $grid.masonry('layout');
-            });
-            
-            
-            // Or, initialize Masonry after all images have been loaded.
-            var $grid = $('.grid').imagesLoaded( function() {
+            $('.grid').imagesLoaded( function() {
                 
-                // init Masonry after all images have loaded
-                console.log("calling masonry");
-                $grid.masonry(masonryParams);
-                console.log("initialized masonry");
-            });*/
+                console.log("imagesLoaded event triggered");
             
-            ////////////////////////////////
-            
-            /*setTimeout(function() {
-                console.log("calling masonry");
-                $('.grid').masonry(masonryParams);
-            }, 10000);*/
+                /*setTimeout(function() {
+                    console.log("resetting masonry layout");
+                    $('.grid').masonry('layout');
+                }, 8000);*/
+            });
             
           });
     };
@@ -127,10 +97,5 @@ app.controller('GalleryController', ['$scope', '$routeParams', '$http',  functio
     $scope.closeImageView = function() {
         $('#imageView').css({"display": "none"});
     };
-    
-    /*$scope.$on('$viewContentLoaded', function() {
-        alert("viewcontentloaded test");
-        //loadGallery($routeParams.id);
-    });*/
     
 }]);
