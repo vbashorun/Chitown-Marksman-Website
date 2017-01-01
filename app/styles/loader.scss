@@ -1,0 +1,63 @@
+$r:20px;
+$dots:5;
+$slice:(3.14*2)/$dots;
+$dot-size:20px;
+$blur:15px;
+
+#loaderContainer {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    background-color: white;
+    z-index: -3;
+    transition: opacity 1s linear;
+}
+
+.dots{
+    list-style-type:none;
+    padding:0;
+    margin:0;
+    position:absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background:white;
+    width:($r*2)+($dot-size*2)+($blur*2);
+    height:($r*2)+($dot-size*2)+($blur*2);
+    -webkit-filter:blur(4px) contrast(10);
+}
+.dot{
+  transform-origin:50% #{-$r};
+  position:absolute;
+  top:($r*2)+$dot-size+$blur; 
+  left:$r+($dot-size/2)+$blur;
+}
+.dot-gfx{
+  background: #061F35;
+  width:20px;
+  height:20px;
+  border-radius:100%;
+}
+
+@for $i from 1 through $dots{
+  $a:$slice*$i;
+  @keyframes dot-anim-#{$i}{
+    0%{
+      transform:rotate(0);
+    }
+    #{percentage(0.5+((0.5/$dots)*$i))}{
+      transform:rotate(1080deg);
+    }
+    100%{
+      transform:rotate(1080deg);
+    }
+  }
+  .dot:nth-child(#{$i}){
+    //transform:translate(cos($a)*$r,sin($a)*$r);
+    
+    transform:rotate(0); 
+    animation:dot-anim-#{$i} 4.5s ease-in-out /*$i*(-3s/$dots)*/ infinite;
+  }
+}

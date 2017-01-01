@@ -80,10 +80,13 @@ app.controller('GalleryController', ['$scope', '$routeParams', '$http',  functio
                 
                 console.log("imagesLoaded event triggered");
             
-                /*setTimeout(function() {
+                setTimeout(function() {
                     console.log("resetting masonry layout");
-                    $('.grid').masonry('layout');
-                }, 8000);*/
+                    $('#galleryViewContainer').css({"opacity" : "1"});
+                    $('#loaderContainer').css({"opacity" : "0"});
+                    
+                    //$('.grid').masonry('layout');
+                }, 8000);
             });
             
           });

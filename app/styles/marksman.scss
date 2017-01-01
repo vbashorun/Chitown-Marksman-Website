@@ -1,4 +1,5 @@
 @import "../bootstrap-sass/assets/stylesheets/bootstrap";
+@import "loader.scss";
 
 $titleFont: 'Waterlily Script';
 $subFont1: 'Lato-Reg';
@@ -475,6 +476,8 @@ header {
     min-height: 100vh;
     width: 100vw;
     position: relative;
+    opacity: 0;
+    transition: opacity 1s linear;
 }
 
 #galleryViewBackground, .gallery-grid-sizer {
