@@ -386,6 +386,8 @@ header {
     position: relative;
     padding: 0% 2%;
     overflow: auto;
+    opacity: 0;
+    transition: opacity 1s linear;
 }
 
 #portfolioViewBackground {

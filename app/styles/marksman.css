@@ -5614,7 +5614,9 @@ header {
   min-height: 92vh;
   position: relative;
   padding: 0% 2%;
-  overflow: auto; }
+  overflow: auto;
+  opacity: 0;
+  transition: opacity 1s linear; }
 
 #portfolioViewBackground {
   width: 70%;
