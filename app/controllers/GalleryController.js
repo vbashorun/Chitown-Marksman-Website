@@ -9,33 +9,6 @@ app.controller('GalleryController', ['$scope', '$routeParams', '$http',  functio
     };
 
     $(document).ready(function() {
-        
-        console.log("gallery controller: document ready");
-        
-        
-
-        /*$scope.cards = [
-
-            {
-                image: "./images/galleries/urban_playground/img_5360.jpg"
-            },
-            {
-                image: "./images/galleries/urban_playground/img_5328.jpg"
-            },
-            {
-                image: "./images/galleries/urban_playground/img_5375.jpg"
-            },
-            {
-                image: "./images/galleries/urban_playground/img_5379.jpg"
-            },
-            {
-                image: "./images/galleries/urban_playground/img_5435.jpg"
-            },
-            {
-                image: "./images/galleries/urban_playground/img_5482.jpg"
-            }
-        ];*/
-        
         $scope.cards = [];
         loadGallery($routeParams.id);
     });
@@ -49,7 +22,7 @@ app.controller('GalleryController', ['$scope', '$routeParams', '$http',  functio
     
         // preferably, this data should come from a service component utilized by this method, 
         // not directlypresent in the controller
-        
+       
         
         $http.get("./scripts/php/galleryQuery.php?id=" + id)
         .then(function (response) {
@@ -67,8 +40,6 @@ app.controller('GalleryController', ['$scope', '$routeParams', '$http',  functio
             
             $('.grid').imagesLoaded( function() {
                 
-                console.log("imagesLoaded event triggered");
-                
                 var browserWindow = $(window);
 
                 if (browserWindow.width() >= tabletWidth)
@@ -83,16 +54,12 @@ app.controller('GalleryController', ['$scope', '$routeParams', '$http',  functio
                 });
             
                 setTimeout(function() {
+                    $('.grid').masonry('layout');
                     $('#galleryViewContainer').css({"opacity" : "1"});
                     $('#loaderContainer').css({"opacity" : "0"});
-                    console.log("resetting masonry layout");
-                    $('.grid').masonry('layout');
                 }, 8000);
-                
-                
-            });
-            
-          });
+            });          
+        });
     };
     
     $scope.enlargeImage = function(imagePath) {
