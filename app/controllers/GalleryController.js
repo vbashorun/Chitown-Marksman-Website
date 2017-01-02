@@ -12,18 +12,7 @@ app.controller('GalleryController', ['$scope', '$routeParams', '$http',  functio
         
         console.log("gallery controller: document ready");
         
-        var browserWindow = $(window);
-
-        if (browserWindow.width() >= tabletWidth)
-            $('.grid').masonry(masonryParams);
-
-        // adjust masonryJS on resize
-        browserWindow.resize(function() {
-            if (browserWindow.width() < tabletWidth)
-                $('.grid').masonry('destroy');
-            else
-                $('.grid').masonry(masonryParams);
-        });
+        
 
         /*$scope.cards = [
 
@@ -79,14 +68,28 @@ app.controller('GalleryController', ['$scope', '$routeParams', '$http',  functio
             $('.grid').imagesLoaded( function() {
                 
                 console.log("imagesLoaded event triggered");
+                
+                var browserWindow = $(window);
+
+                if (browserWindow.width() >= tabletWidth)
+                    $('.grid').masonry(masonryParams);
+
+                // adjust masonryJS on resize
+                browserWindow.resize(function() {
+                    if (browserWindow.width() < tabletWidth)
+                        $('.grid').masonry('destroy');
+                    else
+                        $('.grid').masonry(masonryParams);
+                });
             
                 setTimeout(function() {
-                    console.log("resetting masonry layout");
                     $('#galleryViewContainer').css({"opacity" : "1"});
                     $('#loaderContainer').css({"opacity" : "0"});
-                    
-                    //$('.grid').masonry('layout');
+                    console.log("resetting masonry layout");
+                    $('.grid').masonry('layout');
                 }, 8000);
+                
+                
             });
             
           });
