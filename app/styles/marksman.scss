@@ -62,44 +62,6 @@ html, body {
     height: 100%;
 }
 
-/****************************
-    Animations
-*****************************/
-
-@keyframes subtleLevitation {
-    50% { bottom: 6%; }
-    100% { bottom: 5%; }
-}
-
-@keyframes wheelSpin {
-    0% { transform: translate(-50%, -50%) rotate(0deg); }
-    50% { transform: translate(-50%, -50%) rotate(360deg); }
-    100% { transform: translate(-50%, -50%) rotate(720deg); }
-}
-
-@keyframes wheelBounce {
-    50% { top: 45%; }
-    100% { top: 50%; }
-}
-
-/****************************
-    Mixins
-*****************************/
-
-/*@mixin animation($value) {
-    -webkit-animation: $value;
-    -moz-animation: $value;
-    -ms-animation: $value;
-    animation: $value;
-}
-
-@mixin border-radius($value) {
-    -webkit-border-radius: $value;
-    -moz-border-radius: $value;
-    -ms-border-radius: $value;
-    border-radius: $value;
-}*/
-
 /**************************************************************************
                              Default Css - Focused on Mobile
 ***************************************************************************/
