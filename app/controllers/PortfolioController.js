@@ -68,7 +68,7 @@ app.controller('PortfolioController', ['$scope', '$http', function($scope, $http
                     $('.grid').masonry('layout');
                     $('#galleryContainer').css({"opacity" : "1"});
                     $('#loaderContainer').css({"opacity" : "0"});
-                }, 8000);
+                }, 6000);
             });
         });
     };

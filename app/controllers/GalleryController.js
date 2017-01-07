@@ -57,7 +57,7 @@ app.controller('GalleryController', ['$scope', '$routeParams', '$http',  functio
                     $('.grid').masonry('layout');
                     $('#galleryViewContainer').css({"opacity" : "1"});
                     $('#loaderContainer').css({"opacity" : "0"});
-                }, 8000);
+                }, 6000);
             });          
         });
     };
