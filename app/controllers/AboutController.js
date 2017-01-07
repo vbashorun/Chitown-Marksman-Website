@@ -53,16 +53,14 @@ app.controller('AboutController', ['$scope', function($scope) {
         
         if (browserWindow.width() >= tabletWidth) {
             // set the blue icons
-            $(".social-media-icon").css("content", function(index, value){
-                var returnString = 'url(' + iconMap[ $(this).attr("id") ]["blue"] + ')';
-                return returnString;
+            $(".social-media-icon").each(function(index, element) {
+                $(this).attr("src", iconMap[ $(this).attr("id") ]["blue"] );
             });
         }
         else {
             // set the white icons
-            $(".social-media-icon").css("content", function(index, value){
-                var returnString = 'url(' + iconMap[ $(this).attr("id") ]["white"] + ')';
-                return returnString;
+            $(".social-media-icon").each(function(index, element) {
+                $(this).attr("src", iconMap[ $(this).attr("id") ]["white"] );
             });
         }
     }
@@ -76,8 +74,8 @@ app.controller('AboutController', ['$scope', function($scope) {
                 var element = $(this);
 
                 var imageSrc = element.children(".social-media-icon").attr("id");
-
-                element.children(".social-media-icon").css({"content": "url(" + iconMap[imageSrc]["white"] + ")"});
+                
+                element.children(".social-media-icon").attr("src", iconMap[imageSrc]["white"]);
             });
 
             $("#socialMediaBlock div a").mouseleave(function() {
@@ -86,7 +84,7 @@ app.controller('AboutController', ['$scope', function($scope) {
 
                 var imageSrc = element.children(".social-media-icon").attr("id");
 
-                element.children(".social-media-icon").css({"content": "url(" + iconMap[imageSrc]["blue"] + ")"});
+                element.children(".social-media-icon").attr("src", iconMap[imageSrc]["blue"]);
             });
         }
         
