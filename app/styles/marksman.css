@@ -5912,6 +5912,7 @@ header {
       text-align: center;
       font-size: 1rem;
       position: absolute;
+      bottom: 4%;
       right: 0%; }
       #messageForm div button:hover {
         background-color: #061F35;
