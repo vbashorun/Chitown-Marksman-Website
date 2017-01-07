@@ -5,7 +5,8 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     sourcemaps = require('gulp-sourcemaps'),
     rename = require('gulp-rename'),
-    shell = require('gulp-shell');
+    shell = require('gulp-shell'),
+    autoprefixer = require('gulp-autoprefixer');
 
 // Views
 gulp.task('view-refresh', function () {
@@ -22,6 +23,10 @@ gulp.task('view-watch', function () {
 gulp.task('sass', function () {
     gulp.src('./app/styles/*.scss')
     .pipe(sass())
+    .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
     .pipe(gulp.dest('./app/styles'))
     .pipe(livereload());
 });
