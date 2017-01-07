@@ -5285,48 +5285,9 @@ button.close {
   font-family: 'Lato-Hai';
   src: local("Lato-Hai"), url("../fonts/Lato-Hai.ttf"); }
 
-/****************************
-    Utility Rules
-*****************************/
-.vert-center {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%); }
-
-.hori-center {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%); }
-
-.full-center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); }
-
 html, body {
   width: 100%;
   height: 100%; }
-
-.container-fluid {
-  padding-left: 0px;
-  padding-right: 0px; }
-
-.overlay-primary {
-  width: 100%;
-  height: 100%;
-  background-color: rgba(6, 31, 53, 0.1);
-  position: absolute;
-  top: 0px;
-  left: 0px; }
-
-.overlay-alt {
-  width: 100%;
-  height: 100%;
-  background-color: rgba(250, 250, 250, 0.7);
-  position: absolute;
-  top: 0px;
-  right: 0px; }
 
 /****************************
     Animations
@@ -5450,6 +5411,14 @@ header {
   background-size: cover;
   background-position: center center;
   transition: background-image 2s linear; }
+
+#homeOverlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(6, 31, 53, 0.4);
+  position: absolute;
+  top: 0px;
+  left: 0px; }
 
 #titleContainer {
   width: 100%;

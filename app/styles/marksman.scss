@@ -11,7 +11,7 @@ $subFont1Alt2: 'Lato-Hai';
 $primary-color: #061F35;
 $accent-color: #FFED85;
 $tertiary-color: #FFF;
-$overlay-primary: rgba(6,31,53,0.1);
+$overlay-primary: rgba(6,31,53,0.4);
 $overlay-alt: rgba(250,250,250,0.7);
 $soft-blue: #43637F;
 $black: #000;
@@ -57,59 +57,9 @@ $negative-z-level: -1;
         url('../fonts/Lato-Hai.ttf');
 }
 
-/****************************
-    Utility Rules
-*****************************/
-
-.vert-center {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.hori-center {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.full-center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
 html, body {
     width: 100%;
     height: 100%;
-}
-
-.container-fluid {
-    //    getting rid of bootstrap padding on container 
-    //    so that class is full-width of screen
-    padding-left: 0px;
-    padding-right: 0px;
-}
-
-.overlay-primary {
-    width: 100%;
-    height: 100%;
-    background-color: $overlay-primary;
-    
-    position: absolute;
-    top: 0px;
-    left: 0px;
-}
-
-.overlay-alt {
-    width: 100%;
-    height: 100%;
-    background-color: $overlay-alt;
-    
-    position: absolute;
-    top: 0px;
-    right: 0px;
 }
 
 /****************************
@@ -268,6 +218,17 @@ header {
     background-size: cover;
     background-position: center center;
     transition: background-image 2s linear;
+}
+
+#homeOverlay {
+    
+    width: 100%;
+    height: 100%;
+    background-color: $overlay-primary;
+    
+    position: absolute;
+    top: 0px;
+    left: 0px;
 }
 
 #titleContainer {
