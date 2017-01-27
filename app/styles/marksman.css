@@ -5290,7 +5290,7 @@ html, body {
   height: 100%; }
 
 /**************************************************************************
-                             Default Css - Focused on Mobile
+                             Default Css - Mobile
 ***************************************************************************/
 /******************************
         Header & Mobile Menu
@@ -5754,20 +5754,28 @@ header {
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 10px; }
-  #contactInfo div {
+
+#infoContainer {
+  width: 100%;
+  height: 85%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+  #infoContainer div {
     width: 100%;
     height: 15%;
     margin: 15% auto;
     padding: 0px;
     position: relative; }
-    #contactInfo div img {
+    #infoContainer div img {
       display: block;
       max-height: 50%;
       position: absolute;
       top: 0%;
       left: 50%;
       transform: translateX(-50%); }
-    #contactInfo div p {
+    #infoContainer div p {
       display: inline-block;
       color: #FFF;
       font-size: 2rem;
@@ -5779,7 +5787,7 @@ header {
       transform: translateX(-50%);
       bottom: 0%;
       left: 50%; }
-  #contactInfo button {
+  #infoContainer button {
     width: 45%;
     height: 45px;
     border: 2px solid #FFF;
@@ -5831,7 +5839,7 @@ header {
       font-size: 1.7rem;
       padding: 10px; }
     #messageForm div textarea {
-      height: 50%; }
+      height: 200px; }
     #messageForm div button {
       width: 45%;
       height: 45px;
@@ -5841,9 +5849,7 @@ header {
       color: #061F35;
       text-align: center;
       font-size: 1rem;
-      position: absolute;
-      bottom: 4%;
-      right: 0%; }
+      float: right; }
       #messageForm div button:hover {
         background-color: #061F35;
         color: #FFF; }
@@ -6014,15 +6020,18 @@ header {
   /**************************
             Contact View
     ***************************/
-  #contactInfo div {
+  #infoContainer div {
+    height: 18%;
     margin: 7% auto; }
-  #contactInfo button {
+  #infoContainer button {
     width: 30%; }
   #messageForm img {
     width: 4%;
     top: 5%; }
   #messageForm div input, #messageForm div textarea {
     margin: 2% 0%; }
+  #messageForm div textarea {
+    height: 320px; }
   #messageForm div button {
     width: 25%; } }
 
@@ -6173,10 +6182,11 @@ header {
     left: 0%;
     transform: translateY(-50%);
     z-index: 7; }
-    #contactInfo div {
-      margin: 15% auto; }
-    #contactInfo button {
-      display: none; }
+  #infoContainer div {
+    height: 17%;
+    margin: 15% auto; }
+  #infoContainer button {
+    display: none; }
   #messageForm {
     display: block;
     width: 75%;

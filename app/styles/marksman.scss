@@ -63,7 +63,7 @@ html, body {
 }
 
 /**************************************************************************
-                             Default Css - Focused on Mobile
+                             Default Css - Mobile
 ***************************************************************************/
 
 /******************************
@@ -681,7 +681,6 @@ header {
 }
 
 #contactInfo {
-    
     width: 90%;
     height: 85%;
     background-color: $primary-color;
@@ -690,6 +689,16 @@ header {
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 10px;
+}
+
+#infoContainer {
+    
+    width: 100%;
+    height: 85%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     
     div {
         width: 100%;
@@ -786,7 +795,7 @@ header {
         }
         
         textarea {
-            height: 50%
+            height: 200px;
         }
         
         button {
@@ -799,9 +808,7 @@ header {
             color: $primary-color;
             text-align: center;
             font-size: 1rem;
-            position: absolute;
-            bottom: 4%;
-            right: 0%;
+            float: right;
             
             &:hover {
                     background-color: $primary-color;
@@ -1076,9 +1083,10 @@ header {
             Contact View
     ***************************/
     
-    #contactInfo {
+    #infoContainer {
 
         div {
+            height: 18%;
             margin: 7% auto;
         }
 
@@ -1098,6 +1106,10 @@ header {
 
             input, textarea {
                 margin: 2% 0%;
+            }
+            
+            textarea {
+                height: 320px;
             }
 
             button {
@@ -1364,14 +1376,20 @@ header {
         left: 0%;
         transform: translateY(-50%);
         z-index: $z-level-4;
+    }
+    
+    #infoContainer {
+    
         
         div {
+            height: 17%;
             margin: 15% auto;
         }
 
         button {
             display: none;
         }
+        
     }
 
     #messageForm {

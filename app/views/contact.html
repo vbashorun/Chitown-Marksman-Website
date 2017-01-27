@@ -9,22 +9,26 @@
     
     <div id="contactComponentContainer">
          <div id="contactInfo">
-             <div>
-                 <img src="./images/icon_contact_location.png" />
-                 <p>San Jose, CA</p>
+             <div id="infoContainer">
+                 <div>
+                     <img src="./images/icon_contact_location.png" />
+                     <p>San Jose, CA</p>
+                 </div>
+
+                 <div>
+                     <img src="./images/icon_contact_email.png" />
+                     <p>vic@chitownmarksman.com</p>
+                 </div>
+
+                 <div>
+                     <img src="./images/icon_contact_phone.png" />
+                     <p>773-729-7741</p>
+                 </div>
+
+                <button id="" ng-click="openMessageForm()">Send Me a Message</button>
              </div>
              
-             <div>
-                 <img src="./images/icon_contact_email.png" />
-                 <p>vic@chitownmarksman.com</p>
-             </div>
              
-             <div>
-                 <img src="./images/icon_contact_phone.png" />
-                 <p>773-729-7741</p>
-             </div>
-             
-            <button id="" ng-click="openMessageForm()">Send Me a Message</button>
         </div>
 
         <div id="messageForm">
@@ -37,8 +41,6 @@
                 <textarea type="text" ng-model="emailMessage" placeholder="Message:" maxlength="300" ></textarea>
                 <button id="sendMailButton" ng-click="validateEmail()">Send</button>
             </div>
-            
-
             <!--<div id="emailConfirmation">
                 <p>Message sent! I'll get back to you as soon as I can!</p>
             </div>-->
