@@ -37,7 +37,7 @@ app.controller('ContactController', ['$scope', '$http', function($scope, $http) 
             alert("Um....kinda need a message....");
             return false;
         }
-        else
+        else 
             sendEmail($scope.visitorEmail, $scope.emailSubject, $scope.emailMessage);
     };
 
@@ -76,7 +76,7 @@ app.controller('ContactController', ['$scope', '$http', function($scope, $http) 
         //set up request and use unique id to avoid cached result
         xmlhttp.open("POST","./scripts/php/sendMailChitown.php",true);
         xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
-        var mailParams = "visitorEmail=" + visitorEmail.value + "&emailSubject=" + emailSubject.value + "&emailMessage=" + emailMessage.value
+        var mailParams = "visitorEmail=" + visitorEmail + "&emailSubject=" + emailSubject + "&emailMessage=" + emailMessage;
         xmlhttp.send(mailParams);
     };
     
