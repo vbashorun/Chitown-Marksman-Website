@@ -701,9 +701,10 @@ header {
     transform: translate(-50%, -50%);
     
     div {
+        
         width: 100%;
         height: 15%;
-        margin: 15% auto;
+        margin: 12% auto;
         padding: 0px;
         position: relative;
         
@@ -748,6 +749,7 @@ header {
 
 #messageForm {
     
+    
     display: none;
     width: 100vw;
     min-height: 100vh;
@@ -756,6 +758,7 @@ header {
     top: 0%;
     right: 0%;
     z-index: $max-z-level;
+    overflow: auto;
     
     img {
         display: block;
@@ -1110,7 +1113,7 @@ header {
 
         div {
             height: 18%;
-            margin: 7% auto;
+            margin: 5% auto;
         }
 
         button {
@@ -1424,6 +1427,7 @@ header {
         background-color: $white-transparent;
         position: absolute;
         z-index: $z-level-3;
+        overflow: visible;
         
         img {
             display: none;
