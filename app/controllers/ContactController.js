@@ -65,10 +65,11 @@ app.controller('ContactController', ['$scope', '$http', function($scope, $http) 
                 var response = xmlhttp.responseText;
 
                 if (response == "Message Sent") {
-                    $("#emailConfirmation").css({"display" : "block"});
+                    //$("#emailConfirmation").css({"display" : "block"});
                     $scope.visitorEmail = "";
                     $scope.emailSubject = "";
                     $scope.emailMessage = "";
+                    $scope.$apply(); // without this, scope variables change but aren't reflected in UI
                 }
             }
         }
