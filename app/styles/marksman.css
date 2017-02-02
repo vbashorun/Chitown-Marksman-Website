@@ -5860,12 +5860,16 @@ header {
   height: 45px;
   text-align: center;
   font-size: 1rem;
+  background-color: #061F35;
+  border-radius: 3px;
   position: relative;
   top: 0%;
   left: 0%;
-  transform: none; }
+  transform: none;
+  opacity: 0;
+  transition: opacity 0.5s linear; }
   #emailConfirmation h5 {
-    color: #061F35;
+    color: #FFF;
     margin: 0px;
     font-family: "Lato-Reg";
     font-size: 1.5rem;

@@ -826,13 +826,17 @@ header {
     height: 45px;
     text-align: center;
     font-size: 1rem;
+    background-color: $primary-color;
+    border-radius: 3px;
     position: relative;
     top: 0%;
     left: 0%;
     transform: none;
+    opacity: 0;
+    transition: opacity 0.5s linear;
     
     h5 {
-        color: $primary-color;
+        color: $tertiary-color;
         margin: 0px;
         font-family: $subFont1;
         font-size: 1.5rem;
