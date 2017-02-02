@@ -766,7 +766,7 @@ header {
         cursor: pointer;
     }
     
-    div {
+    div:first-child {
         
         width: 90%;
         height: 80%;
@@ -815,6 +815,29 @@ header {
                     color: $tertiary-color;
                 }
         }
+    }
+}
+
+#emailConfirmation {
+    width: 40%;
+    height: 45px;
+    text-align: center;
+    font-size: 1rem;
+    position: relative;
+    top: 0%;
+    left: 0%;
+    transform: none;
+    
+    h5 {
+        color: $primary-color;
+        margin: 0px;
+        font-family: $subFont1;
+        font-size: 1.5rem;
+        text-align: center;
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
     }
 }
 
@@ -1102,7 +1125,7 @@ header {
             top: 5%;
         }
 
-        div {
+        div:first-child {
 
             input, textarea {
                 margin: 2% 0%;
@@ -1406,7 +1429,7 @@ header {
             display: none;
         }
         
-        div {
+        div:first-child {
             width: 70%;
             left: 25%;
             transform: translateY(-50%);
@@ -1414,6 +1437,14 @@ header {
             button {
                 font-size: 1.5rem;
             }
+        }
+    }
+    
+    #emailConfirmation {
+        margin: 0px auto;
+        
+        h5 {
+            font-size: 1.5rem;
         }
     }
 }

@@ -32,18 +32,20 @@
         </div>
 
         <div id="messageForm">
-            <img src="./images/close.png" ng-click="closeMessageForm()" />
-            
             <div>
                 <p>Send Me a Message</p>
                 <input type="text" ng-model="visitorEmail" placeholder="Your Email:" />
                 <input type="text" ng-model="emailSubject" placeholder="Subject:" />
                 <textarea type="text" ng-model="emailMessage" placeholder="Message:" maxlength="300" ></textarea>
+                
                 <button id="sendMailButton" ng-click="validateEmail()">Send</button>
+                <div id="emailConfirmation">
+                    <h5>Message sent!</h5> <!-- changed this from p tag to avoid css specifity issues-->
+                </div>
             </div>
-            <!--<div id="emailConfirmation">
-                <p>Message sent! I'll get back to you as soon as I can!</p>
-            </div>-->
+            
+            <img src="./images/close.png" ng-click="closeMessageForm()" />
+            
         </div>
     </div>
     

@@ -5816,20 +5816,20 @@ header {
     top: 3%;
     left: 5%;
     cursor: pointer; }
-  #messageForm div {
+  #messageForm div:first-child {
     width: 90%;
     height: 80%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); }
-    #messageForm div p {
+    #messageForm div:first-child p {
       color: #061F35;
       margin: 0px;
       font-family: "Lato-Reg";
       font-size: 2.7rem;
       text-align: center; }
-    #messageForm div input, #messageForm div textarea {
+    #messageForm div:first-child input, #messageForm div:first-child textarea {
       width: 100%;
       height: 40px;
       margin: 5% 0%;
@@ -5838,9 +5838,9 @@ header {
       border: 0px;
       font-size: 1.7rem;
       padding: 10px; }
-    #messageForm div textarea {
+    #messageForm div:first-child textarea {
       height: 200px; }
-    #messageForm div button {
+    #messageForm div:first-child button {
       width: 45%;
       height: 45px;
       background-color: transparent;
@@ -5850,9 +5850,29 @@ header {
       text-align: center;
       font-size: 1rem;
       float: right; }
-      #messageForm div button:hover {
+      #messageForm div:first-child button:hover {
         background-color: #061F35;
         color: #FFF; }
+
+#emailConfirmation {
+  width: 40%;
+  height: 45px;
+  text-align: center;
+  font-size: 1rem;
+  position: relative;
+  top: 0%;
+  left: 0%;
+  transform: none; }
+  #emailConfirmation h5 {
+    color: #061F35;
+    margin: 0px;
+    font-family: "Lato-Reg";
+    font-size: 1.5rem;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); }
 
 /**************************************************************************
                             Tablet & wider
@@ -6028,11 +6048,11 @@ header {
   #messageForm img {
     width: 4%;
     top: 5%; }
-  #messageForm div input, #messageForm div textarea {
+  #messageForm div:first-child input, #messageForm div:first-child textarea {
     margin: 2% 0%; }
-  #messageForm div textarea {
+  #messageForm div:first-child textarea {
     height: 320px; }
-  #messageForm div button {
+  #messageForm div:first-child button {
     width: 25%; } }
 
 /**************************************************************************
@@ -6197,12 +6217,16 @@ header {
     z-index: 5; }
     #messageForm img {
       display: none; }
-    #messageForm div {
+    #messageForm div:first-child {
       width: 70%;
       left: 25%;
       transform: translateY(-50%); }
-      #messageForm div button {
-        font-size: 1.5rem; } }
+      #messageForm div:first-child button {
+        font-size: 1.5rem; }
+  #emailConfirmation {
+    margin: 0px auto; }
+    #emailConfirmation h5 {
+      font-size: 1.5rem; } }
 
 /**************************************************************************
                             Laptop HD & wider
