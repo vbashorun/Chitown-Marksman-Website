@@ -5850,7 +5850,8 @@ header {
       color: #061F35;
       text-align: center;
       font-size: 1rem;
-      float: right; }
+      float: right;
+      margin-bottom: 10px; }
       #messageForm div:first-child button:hover {
         background-color: #061F35;
         color: #FFF; }
@@ -6219,8 +6220,7 @@ header {
     max-height: 100%;
     background-color: rgba(255, 255, 255, 0.75);
     position: absolute;
-    z-index: 5;
-    overflow: visible; }
+    z-index: 5; }
     #messageForm img {
       display: none; }
     #messageForm div:first-child {

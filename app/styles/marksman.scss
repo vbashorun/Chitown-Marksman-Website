@@ -749,7 +749,6 @@ header {
 
 #messageForm {
     
-    
     display: none;
     width: 100vw;
     min-height: 100vh;
@@ -812,6 +811,7 @@ header {
             text-align: center;
             font-size: 1rem;
             float: right;
+            margin-bottom: 10px;
             
             &:hover {
                     background-color: $primary-color;
@@ -1431,7 +1431,6 @@ header {
         background-color: $white-transparent;
         position: absolute;
         z-index: $z-level-3;
-        overflow: visible;
         
         img {
             display: none;
