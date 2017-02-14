@@ -24,7 +24,7 @@
 
         <div class="image-card" ng-repeat="card in cards">
             <a ng-click="enlargeImage(card.image)"><div><p>Enlarge</p></div></a>
-            <img ng-src="{{ card.image }}" />
+            <img ng-src="{{ card.image }}" imageonload />
         </div>
     </div>
     

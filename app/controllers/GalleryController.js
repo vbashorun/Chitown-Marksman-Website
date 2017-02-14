@@ -26,6 +26,7 @@ app.controller('GalleryController', ['$scope', '$routeParams', '$http',  functio
         
         $http.get("./scripts/php/galleryQuery.php?id=" + id)
         .then(function (response) {
+            console.log("gallery loaded successfuly");
             $scope.gallery = response.data.records[0];
             
             $('#galleryViewBackground')
@@ -36,7 +37,7 @@ app.controller('GalleryController', ['$scope', '$routeParams', '$http',  functio
                 $scope.cards.push(
                     { image: $scope.gallery.location + '/' + item }
                 );
-            }); 
+            });
             
             $('.grid').imagesLoaded( function() {
                 
@@ -59,6 +60,10 @@ app.controller('GalleryController', ['$scope', '$routeParams', '$http',  functio
                     $('#loaderContainer').css({"opacity" : "0"});
                 }, 6000);
             });          
+        })
+        .catch(function(err){
+            
+            console.log("error loading gallery.", err);
         });
     };
     
