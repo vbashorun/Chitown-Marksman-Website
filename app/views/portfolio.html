@@ -35,7 +35,7 @@
     
         <div class="gallery-card" ng-repeat="card in cards"> <!-- note: you can sort ng-repeat items -->
             <a href="#/gallery/{{ card.id }}"><div><p>View gallery</p></div></a>
-            <img ng-src="{{ card.location + '/' + card.cover }}" />
+            <img ng-src="{{ card.location + '/' + card.cover }}" imageonload masonry="masonryParams" />
             <p>{{ card.name }}</p>
         </div>
     </div>
