@@ -1,5 +1,4 @@
 app.directive('imageonload', function() {
-    console.log("directive initialized");
     
     var masonryParams = {
         itemSelector: '.image-card',
@@ -7,16 +6,19 @@ app.directive('imageonload', function() {
         percentPosition: true,
         gutter: 0
     };
+    var tabletWidth = 768;  // minimum width before masonryJS is instantiated
+    var browserWindow = $(window);
     
     return {
         restrict: 'A',
         link: function(scope, element, attrs) {
             element.bind('load', function() {
-                console.log('image is loaded');
                 
                 setTimeout(function() {
-                    $('.grid').masonry(masonryParams);
-                    console.log('masonry called');
+                    
+                    if (browserWindow.width() >= tabletWidth)
+                        $('.grid').masonry(masonryParams);
+                    
                 }, 1000);
             });
             element.bind('error', function(){
