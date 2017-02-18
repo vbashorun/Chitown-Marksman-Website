@@ -33,11 +33,12 @@ app.controller('PortfolioController', ['$scope', '$http', function($scope, $http
         if (!isSelected) {
             $('#galleryContainer').css({"opacity" : "0"});
             $('#loaderContainer').css({"opacity" : "1"});
+            $('.categorySelected').removeClass("categorySelected");
+            $(element).addClass("categorySelected");
+            $scope.selectedCategory = element.getAttribute("data-category");
             
             setTimeout(function() {
-                $('.categorySelected').removeClass("categorySelected");
-                $(element).addClass("categorySelected");
-                $scope.selectedCategory = element.getAttribute("data-category");
+                // placing update in timeout allows UI to update behind the scenes
                 updatePortfolioView($scope.selectedCategory);
             }, 1000);
         }
