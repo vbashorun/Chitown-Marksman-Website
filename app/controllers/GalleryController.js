@@ -2,12 +2,6 @@ app.controller('GalleryController', ['$scope', '$routeParams', '$http',  functio
     
     var tabletWidth = 768;  // minimum width before masonryJS is instantiated
     var browserWindow = $(window);
-    var masonryParams = {
-        itemSelector: '.image-card',
-        columnWidth: '.gallery-grid-sizer',
-        percentPosition: true,
-        gutter: 0
-    };
 
     $(document).ready(function() {
         
@@ -19,7 +13,15 @@ app.controller('GalleryController', ['$scope', '$routeParams', '$http',  functio
                 $('.grid').masonry(masonryParams);
         });
         
+        $scope.masonryParams = {
+            itemSelector: '.image-card',
+            columnWidth: '.gallery-grid-sizer',
+            percentPosition: true,
+            gutter: 0
+        };
+        
         $scope.cards = [];
+        
         loadGallery($routeParams.id);
     });
     
@@ -46,8 +48,7 @@ app.controller('GalleryController', ['$scope', '$routeParams', '$http',  functio
                 }, 2000);
             });          
         })
-        .catch(function(err){
-            
+        .catch(function(err) {
             console.log("error loading gallery.", err);
         });
     };
