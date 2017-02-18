@@ -5,22 +5,21 @@ app.controller('GalleryController', ['$scope', '$routeParams', '$http',  functio
 
     $(document).ready(function() {
         
-        // adjust masonryJS on resize
-        browserWindow.resize(function() {
-            if (browserWindow.width() < tabletWidth)
-                $('.grid').masonry('destroy');
-            else
-                $('.grid').masonry(masonryParams);
-        });
-        
         $scope.masonryParams = {
             itemSelector: '.image-card',
             columnWidth: '.gallery-grid-sizer',
             percentPosition: true,
             gutter: 0
         };
-        
         $scope.cards = [];
+        
+        // adjust masonryJS on resize
+        browserWindow.resize(function() {
+            if (browserWindow.width() < tabletWidth)
+                $('.grid').masonry('destroy');
+            else
+                $('.grid').masonry($scope.masonryParams);
+        });
         
         loadGallery($routeParams.id);
     });
@@ -49,7 +48,7 @@ app.controller('GalleryController', ['$scope', '$routeParams', '$http',  functio
             });          
         })
         .catch(function(err) {
-            console.log("error loading gallery.", err);
+            console.log("error loading gallery images.", err);
         });
     };
     
