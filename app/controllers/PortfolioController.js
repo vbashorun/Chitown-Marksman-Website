@@ -50,6 +50,9 @@ app.controller('PortfolioController', ['$scope', '$http', function($scope, $http
     
     function updatePortfolioView(category) {
         
+        // destroying masonry here allows new layout of galleries to be laid out properly by the imageOnLoad directive
+        $('.grid').masonry('destroy'); 
+        
         $http.get("./scripts/php/portfolioQuery.php?tag=" + category)
         .then(function (response) {
             $scope.cards = response.data.records;
