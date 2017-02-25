@@ -5,7 +5,7 @@ app.controller('ContactController', ['$scope', '$http', function($scope, $http) 
         $scope.visitorEmail = "";
         $scope.emailSubject = "";
         $scope.emailMessage = "";
-        
+        $scope.sending = false;
     });
     
     $scope.openMessageForm = function() {
@@ -37,8 +37,11 @@ app.controller('ContactController', ['$scope', '$http', function($scope, $http) 
             alert("Um....kinda need a message....");
             return false;
         }
-        else 
+        else {
+            $scope.sending = true;
             sendEmail($scope.visitorEmail, $scope.emailSubject, $scope.emailMessage);
+        }
+            
     };
 
     function sendEmail(visitorEmail, emailSubject, emailMessage) {
@@ -69,6 +72,7 @@ app.controller('ContactController', ['$scope', '$http', function($scope, $http) 
                     $scope.visitorEmail = "";
                     $scope.emailSubject = "";
                     $scope.emailMessage = "";
+                    $scope.sending = false;
                     
                     $("#emailConfirmation").css({"opacity" : "1"});
                     
