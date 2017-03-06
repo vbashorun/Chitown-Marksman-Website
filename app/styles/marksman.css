@@ -5817,44 +5817,45 @@ header {
     top: 3%;
     left: 5%;
     cursor: pointer; }
-  #messageForm div:first-child {
-    width: 90%;
-    height: 80%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); }
-    #messageForm div:first-child p {
-      color: #061F35;
-      margin: 0px;
-      font-family: "Lato-Reg";
-      font-size: 2.7rem;
-      text-align: center; }
-    #messageForm div:first-child input, #messageForm div:first-child textarea {
-      width: 100%;
-      height: 40px;
-      margin: 5% 0%;
+
+#messageComponents {
+  width: 90%;
+  height: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+  #messageComponents p {
+    color: #061F35;
+    margin: 0px;
+    font-family: "Lato-Reg";
+    font-size: 2.7rem;
+    text-align: center; }
+  #messageComponents input, #messageComponents textarea {
+    width: 100%;
+    height: 40px;
+    margin: 5% 0%;
+    background-color: #061F35;
+    color: #FFF;
+    border: 0px;
+    font-size: 1.7rem;
+    padding: 10px; }
+  #messageComponents textarea {
+    height: 200px; }
+  #messageComponents button {
+    width: 45%;
+    height: 45px;
+    background-color: transparent;
+    border: 2px solid #061F35;
+    border-radius: 3px;
+    color: #061F35;
+    text-align: center;
+    font-size: 1rem;
+    float: right;
+    margin-bottom: 10px; }
+    #messageComponents button:hover {
       background-color: #061F35;
-      color: #FFF;
-      border: 0px;
-      font-size: 1.7rem;
-      padding: 10px; }
-    #messageForm div:first-child textarea {
-      height: 200px; }
-    #messageForm div:first-child button {
-      width: 45%;
-      height: 45px;
-      background-color: transparent;
-      border: 2px solid #061F35;
-      border-radius: 3px;
-      color: #061F35;
-      text-align: center;
-      font-size: 1rem;
-      float: right;
-      margin-bottom: 10px; }
-      #messageForm div:first-child button:hover {
-        background-color: #061F35;
-        color: #FFF; }
+      color: #FFF; }
 
 #emailConfirmation {
   width: 40%;
@@ -6054,11 +6055,11 @@ header {
   #messageForm img {
     width: 4%;
     top: 5%; }
-  #messageForm div:first-child input, #messageForm div:first-child textarea {
+  #messageComponents input, #messageComponents textarea {
     margin: 2% 0%; }
-  #messageForm div:first-child textarea {
+  #messageComponents textarea {
     height: 320px; }
-  #messageForm div:first-child button {
+  #messageComponents button {
     width: 25%; } }
 
 /**************************************************************************
@@ -6223,12 +6224,12 @@ header {
     z-index: 5; }
     #messageForm img {
       display: none; }
-    #messageForm div:first-child {
-      width: 70%;
-      left: 25%;
-      transform: translateY(-50%); }
-      #messageForm div:first-child button {
-        font-size: 1.5rem; }
+  #messageComponents {
+    width: 70%;
+    left: 25%;
+    transform: translateY(-50%); }
+    #messageComponents button {
+      font-size: 1.5rem; }
   #emailConfirmation {
     margin: 0px auto; }
     #emailConfirmation h5 {
